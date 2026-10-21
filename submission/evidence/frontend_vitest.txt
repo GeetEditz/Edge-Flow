@@ -1,0 +1,12 @@
+ ✓ src/app.test.tsx > WebSocket live metrics > backs off exponentially with a ceiling
+ ✓ src/app.test.tsx > WebSocket live metrics > applies snapshots, appends points and reconnects after a drop
+ ✓ src/app.test.tsx > API client > surfaces backend error details
+ ✓ src/app.test.tsx > API client > reports an unreachable control plane
+ ✓ src/app.test.tsx > API client > sends JSON bodies to the right endpoint
+ ✓ src/app.test.tsx > UI states and controls > shows a skeleton while loading and the value afterwards
+ ✓ src/app.test.tsx > UI states and controls > error alert offers retry
+ ✓ src/app.test.tsx > UI states and controls > confirm dialog confirms, cancels and closes on Escape
+ ✓ src/app.test.tsx > UI states and controls > segmented control reports selection and pressed state
+ ✓ src/app.test.tsx > UI states and controls > formats missing values as unavailable, never zero
+ Test Files  1 passed (1)
+      Tests  10 passed (10)

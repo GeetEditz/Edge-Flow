@@ -1,0 +1,42 @@
+PASS  Template unchanged: Final_Computer_Networks_Mini_Project_Report_Template.docx  20922173d091fc34
+PASS  Template unchanged: MiniProject_PPT_Template_TY_CSE_Final.pptx                 1fe0bdbdf179313c
+PASS  DOCX: project title present                                                    2 occurrences
+PASS  DOCX: faculty Dr. Swati                                                        
+PASS  DOCX: Group No. 2                                                              
+PASS  DOCX: academic year 2026–2027                                                  
+PASS  DOCX: More Geet Dattatraya with PRN 1262250006 in team tables                  4 table rows (cover, certificate, declaration, contributions)
+PASS  DOCX: Shinde Soham Manoj with PRN 1262250009 in team tables                    4 table rows (cover, certificate, declaration, contributions)
+PASS  DOCX: Jagtap Prasad Sachin with PRN 1262250018 in team tables                  4 table rows (cover, certificate, declaration, contributions)
+PASS  DOCX: Gaikwad Shreyash Sachin with PRN 1262250005 in team tables               4 table rows (cover, certificate, declaration, contributions)
+PASS  DOCX: no template instructions left                                            
+PASS  DOCX: only expected administrative placeholders remain                         [BATCH – to be confirmed]; [DD MONTH YYYY – to be confirmed]; [File / test / section]; [PANEL – to be confirmed]; [To be completed by the team]
+PASS  DOCX: no empty headings                                                        0 found
+PASS  DOCX: chapter structure                                                        Acknowledgement | Abstract | Table of Contents | List of Figures | List of Tables | 1 Introduction and Project Objectives | 2 Proposed Design and Requirements | 3 Implementation and Technical Working | 4 Testing and Results | 5 Discussion and Conclusion | References | AI Usage Declaration | Appendices
+PASS  DOCX: every reference is cited                                                 12 references; uncited: []
+PASS  DOCX: no citation without a reference                                          cited [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+PASS  DOCX: figure captions unique                                                   11 figures
+PASS  DOCX: table captions unique                                                    15 tables
+PASS  DOCX: images embedded                                                          12 images for 11 figure captions
+PASS  DOCX: A4 with 1-inch margins                                                   
+PASS  DOCX: Normal style Times New Roman 12 pt, 1.5 spacing, justified               
+PASS  PDF: exported                                                                  35 pages
+PASS  PDF: no blank pages                                                            blank pages: []
+PASS  PDF: TOC populated with page numbers                                           
+PASS  PDF: list of figures populated                                                 
+PASS  PDF: no Word field errors                                                      
+PASS  PDF: newer than DOCX                                                           
+PASS  PPTX: exactly 8 slides                                                         8 slides
+PASS  PPTX: project title                                                            
+PASS  PPTX: faculty Dr. Swati                                                        
+PASS  PPTX: Group 2                                                                  
+PASS  PPTX: More Geet Dattatraya – 1262250006                                        
+PASS  PPTX: Shinde Soham Manoj – 1262250009                                          
+PASS  PPTX: Jagtap Prasad Sachin – 1262250018                                        
+PASS  PPTX: Gaikwad Shreyash Sachin – 1262250005                                     
+PASS  PPTX: no template instructions left                                            
+PASS  PPTX: template note instructions replaced                                      
+PASS  PPTX: all shapes inside the slide                                              []
+PASS  PPTX: inserted images do not overlap text boxes                                []
+PASS  PPTX: references on slide 8                                                    6 references
+
+40/40 checks passed

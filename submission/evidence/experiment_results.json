@@ -1,0 +1,6486 @@
+[
+ {
+  "id": "6c842c64c72e",
+  "name": "A. Routing comparison (Zipf, 400 req x 3)",
+  "type": "routing_comparison",
+  "config": {
+   "name": "A. Routing comparison (Zipf, 400 req x 3)",
+   "type": "routing_comparison",
+   "workload": {
+    "total_requests": 400,
+    "concurrency": 24,
+    "rate_rps": 0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "per_request",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "hybrid",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 4194304,
+   "cache_ttl_seconds": 30.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 3,
+   "failure": null,
+   "degradation": null
+  },
+  "status": "completed",
+  "created_at": 1792512999.7093203,
+  "started_at": 1792512999.7100458,
+  "finished_at": 1792513106.3586824,
+  "error": null,
+  "summary": {
+   "type": "routing_comparison",
+   "variants": [
+    {
+     "label": "random",
+     "routing": "random",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 279.8467,
+      "p50_ms": 131.5,
+      "p95_ms": 1118.2367,
+      "p99_ms": 1905.88,
+      "throughput_rps": 69.5733,
+      "hit_ratio": 0.5642,
+      "origin_fetches": 163.3333,
+      "origin_bytes": 63872579.3333,
+      "origin_reduction": 0.5917,
+      "failure_rate": 0.0,
+      "evictions": 128.6667,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 0.37,
+      "singapore-edge": 0.3092,
+      "usa-edge": 0.3208
+     }
+    },
+    {
+     "label": "nearest",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 435.9933,
+      "p50_ms": 406.03,
+      "p95_ms": 748.7367,
+      "p99_ms": 860.4733,
+      "throughput_rps": 52.5733,
+      "hit_ratio": 0.57,
+      "origin_fetches": 156.6667,
+      "origin_bytes": 54436269.6667,
+      "origin_reduction": 0.6083,
+      "failure_rate": 0.0,
+      "evictions": 150.6667,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    },
+    {
+     "label": "lowest_latency",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 436.1567,
+      "p50_ms": 410.2133,
+      "p95_ms": 741.31,
+      "p99_ms": 863.0667,
+      "throughput_rps": 52.0433,
+      "hit_ratio": 0.5925,
+      "origin_fetches": 151.3333,
+      "origin_bytes": 52740707,
+      "origin_reduction": 0.6217,
+      "failure_rate": 0.0,
+      "evictions": 145.3333,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    },
+    {
+     "label": "least_loaded",
+     "routing": "least_loaded",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 258.52,
+      "p50_ms": 121.8033,
+      "p95_ms": 1047.6533,
+      "p99_ms": 1764.8633,
+      "throughput_rps": 72.33,
+      "hit_ratio": 0.5825,
+      "origin_fetches": 153.6667,
+      "origin_bytes": 55126116.3333,
+      "origin_reduction": 0.6158,
+      "failure_rate": 0.0,
+      "evictions": 122.6667,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 0.1183,
+      "singapore-edge": 0.5892,
+      "usa-edge": 0.2925
+     }
+    },
+    {
+     "label": "hybrid",
+     "routing": "hybrid",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 146.88,
+      "p50_ms": 85.6733,
+      "p95_ms": 404.33,
+      "p99_ms": 511.7267,
+      "throughput_rps": 142.7067,
+      "hit_ratio": 0.5725,
+      "origin_fetches": 150.3333,
+      "origin_bytes": 58623164.6667,
+      "origin_reduction": 0.6242,
+      "failure_rate": 0.0,
+      "evictions": 129.6667,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 0.2975,
+      "singapore-edge": 0.7025
+     }
+    }
+   ],
+   "repetitions": 3
+  },
+  "runs": [
+   {
+    "id": 23,
+    "experiment_id": "6c842c64c72e",
+    "variant": "random",
+    "repetition": 0,
+    "routing_strategy": "random",
+    "cache_policy": "lru",
+    "started_at": 1792512999.7235665,
+    "finished_at": 1792513006.380446,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 5.448,
+     "throughput_rps": 73.43,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 268.72,
+      "p50_ms": 131.89,
+      "p95_ms": 1037.32,
+      "p99_ms": 1900.25,
+      "min_ms": 20.59,
+      "max_ms": 2624.49
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.96,
+      "p50_ms": 0.33,
+      "p95_ms": 2.89,
+      "p99_ms": 16.07,
+      "min_ms": 0.19,
+      "max_ms": 18.69
+     },
+     "cache": {
+      "hits": 218,
+      "misses": 168,
+      "coalesced": 14,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.545
+     },
+     "origin": {
+      "fetches": 168,
+      "bytes": 72557531,
+      "baseline_fetches": 400,
+      "reduction": 0.58,
+      "observed_at_origin": 168
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 143,
+       "failed": 0,
+       "share": 0.3575,
+       "avg_ms": 195.63,
+       "p95_ms": 466.25,
+       "hits": 77,
+       "hit_ratio": 0.5384615384615384
+      },
+      "singapore-edge": {
+       "requests": 125,
+       "failed": 0,
+       "share": 0.3125,
+       "avg_ms": 116.31,
+       "p95_ms": 284.55,
+       "hits": 72,
+       "hit_ratio": 0.576
+      },
+      "usa-edge": {
+       "requests": 132,
+       "failed": 0,
+       "share": 0.33,
+       "avg_ms": 492.23,
+       "p95_ms": 1586.29,
+       "hits": 69,
+       "hit_ratio": 0.5227272727272727
+      }
+     },
+     "errors": {},
+     "evictions": 134,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 73,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 32,
+        "singapore-edge": 22,
+        "usa-edge": 19
+       },
+       "avg_ms": 177.55
+      },
+      {
+       "t": 1.0,
+       "requests": 116,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36,
+        "singapore-edge": 43,
+        "usa-edge": 37
+       },
+       "avg_ms": 236.52
+      },
+      {
+       "t": 2.0,
+       "requests": 87,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 28,
+        "india-edge": 31,
+        "usa-edge": 28
+       },
+       "avg_ms": 269.07
+      },
+      {
+       "t": 3.0,
+       "requests": 85,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 28,
+        "india-edge": 32,
+        "usa-edge": 25
+       },
+       "avg_ms": 219.08
+      },
+      {
+       "t": 4.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 21,
+        "singapore-edge": 4,
+        "india-edge": 12
+       },
+       "avg_ms": 591.14
+      },
+      {
+       "t": 5.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 2
+       },
+       "avg_ms": 1594.48
+      }
+     ],
+     "events": [],
+     "variant": "random",
+     "routing": "random",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 24,
+    "experiment_id": "6c842c64c72e",
+    "variant": "nearest",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513006.3881578,
+    "finished_at": 1792513015.1799443,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.584,
+     "throughput_rps": 52.74,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 437.06,
+      "p50_ms": 411.48,
+      "p95_ms": 747.61,
+      "p99_ms": 883.86,
+      "min_ms": 58.39,
+      "max_ms": 925.64
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.86,
+      "p50_ms": 0.32,
+      "p95_ms": 2.49,
+      "p99_ms": 14.09,
+      "min_ms": 0.2,
+      "max_ms": 16.17
+     },
+     "cache": {
+      "hits": 234,
+      "misses": 155,
+      "coalesced": 11,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.585
+     },
+     "origin": {
+      "fetches": 155,
+      "bytes": 54930182,
+      "baseline_fetches": 400,
+      "reduction": 0.6125,
+      "observed_at_origin": 155
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 437.06,
+       "p95_ms": 747.61,
+       "hits": 234,
+       "hit_ratio": 0.585
+      }
+     },
+     "errors": {},
+     "evictions": 149,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 383.03
+      },
+      {
+       "t": 1.0,
+       "requests": 59,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 59
+       },
+       "avg_ms": 412.16
+      },
+      {
+       "t": 2.0,
+       "requests": 66,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 66
+       },
+       "avg_ms": 375.9
+      },
+      {
+       "t": 3.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 475.73
+      },
+      {
+       "t": 4.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 527.02
+      },
+      {
+       "t": 5.0,
+       "requests": 65,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 65
+       },
+       "avg_ms": 424.13
+      },
+      {
+       "t": 6.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 496.72
+      },
+      {
+       "t": 7.0,
+       "requests": 28,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 28
+       },
+       "avg_ms": 464.24
+      }
+     ],
+     "events": [],
+     "variant": "nearest",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 25,
+    "experiment_id": "6c842c64c72e",
+    "variant": "lowest_latency",
+    "repetition": 0,
+    "routing_strategy": "lowest_latency",
+    "cache_policy": "lru",
+    "started_at": 1792513015.1869125,
+    "finished_at": 1792513023.9483259,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.553,
+     "throughput_rps": 52.96,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 429.25,
+      "p50_ms": 402.5,
+      "p95_ms": 733.97,
+      "p99_ms": 880.35,
+      "min_ms": 61.47,
+      "max_ms": 967.08
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.84,
+      "p50_ms": 0.33,
+      "p95_ms": 2.56,
+      "p99_ms": 13.33,
+      "min_ms": 0.19,
+      "max_ms": 15.3
+     },
+     "cache": {
+      "hits": 235,
+      "misses": 151,
+      "coalesced": 14,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5875
+     },
+     "origin": {
+      "fetches": 151,
+      "bytes": 51326737,
+      "baseline_fetches": 400,
+      "reduction": 0.6225,
+      "observed_at_origin": 151
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 429.25,
+       "p95_ms": 733.97,
+       "hits": 235,
+       "hit_ratio": 0.5875
+      }
+     },
+     "errors": {},
+     "evictions": 145,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 373.0
+      },
+      {
+       "t": 1.0,
+       "requests": 59,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 59
+       },
+       "avg_ms": 409.95
+      },
+      {
+       "t": 2.0,
+       "requests": 61,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 61
+       },
+       "avg_ms": 360.25
+      },
+      {
+       "t": 3.0,
+       "requests": 60,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 60
+       },
+       "avg_ms": 438.62
+      },
+      {
+       "t": 4.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41
+       },
+       "avg_ms": 538.17
+      },
+      {
+       "t": 5.0,
+       "requests": 55,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 55
+       },
+       "avg_ms": 416.21
+      },
+      {
+       "t": 6.0,
+       "requests": 55,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 55
+       },
+       "avg_ms": 478.78
+      },
+      {
+       "t": 7.0,
+       "requests": 18,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 18
+       },
+       "avg_ms": 494.82
+      }
+     ],
+     "events": [],
+     "variant": "lowest_latency",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 26,
+    "experiment_id": "6c842c64c72e",
+    "variant": "least_loaded",
+    "repetition": 0,
+    "routing_strategy": "least_loaded",
+    "cache_policy": "lru",
+    "started_at": 1792513023.9560008,
+    "finished_at": 1792513030.2530894,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 5.084,
+     "throughput_rps": 78.69,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 248.8,
+      "p50_ms": 114.78,
+      "p95_ms": 1038.79,
+      "p99_ms": 1689.16,
+      "min_ms": 24.56,
+      "max_ms": 1960.45
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.91,
+      "p50_ms": 0.36,
+      "p95_ms": 2.1,
+      "p99_ms": 14.25,
+      "min_ms": 0.2,
+      "max_ms": 16.54
+     },
+     "cache": {
+      "hits": 237,
+      "misses": 148,
+      "coalesced": 15,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5925
+     },
+     "origin": {
+      "fetches": 148,
+      "bytes": 53855841,
+      "baseline_fetches": 400,
+      "reduction": 0.63,
+      "observed_at_origin": 148
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 48,
+       "failed": 0,
+       "share": 0.12,
+       "avg_ms": 197.34,
+       "p95_ms": 500.21,
+       "hits": 20,
+       "hit_ratio": 0.4166666666666667
+      },
+      "singapore-edge": {
+       "requests": 241,
+       "failed": 0,
+       "share": 0.6025,
+       "avg_ms": 117.15,
+       "p95_ms": 281.2,
+       "hits": 157,
+       "hit_ratio": 0.6514522821576764
+      },
+      "usa-edge": {
+       "requests": 111,
+       "failed": 0,
+       "share": 0.2775,
+       "avg_ms": 556.91,
+       "p95_ms": 1519.61,
+       "hits": 60,
+       "hit_ratio": 0.5405405405405406
+      }
+     },
+     "errors": {},
+     "evictions": 119,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 92,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 18,
+        "singapore-edge": 59,
+        "usa-edge": 15
+       },
+       "avg_ms": 139.4
+      },
+      {
+       "t": 1.0,
+       "requests": 107,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 68,
+        "usa-edge": 34,
+        "india-edge": 5
+       },
+       "avg_ms": 256.77
+      },
+      {
+       "t": 2.0,
+       "requests": 98,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 55,
+        "usa-edge": 25,
+        "india-edge": 18
+       },
+       "avg_ms": 241.59
+      },
+      {
+       "t": 3.0,
+       "requests": 88,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 59,
+        "usa-edge": 26,
+        "india-edge": 3
+       },
+       "avg_ms": 243.27
+      },
+      {
+       "t": 4.0,
+       "requests": 14,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 10,
+        "india-edge": 4
+       },
+       "avg_ms": 869.84
+      },
+      {
+       "t": 5.0,
+       "requests": 1,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 1
+       },
+       "avg_ms": 1960.45
+      }
+     ],
+     "events": [],
+     "variant": "least_loaded",
+     "routing": "least_loaded",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 27,
+    "experiment_id": "6c842c64c72e",
+    "variant": "hybrid",
+    "repetition": 0,
+    "routing_strategy": "hybrid",
+    "cache_policy": "lru",
+    "started_at": 1792513030.2653952,
+    "finished_at": 1792513034.1807404,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 2.705,
+     "throughput_rps": 147.89,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 144.71,
+      "p50_ms": 86.98,
+      "p95_ms": 392.18,
+      "p99_ms": 521.03,
+      "min_ms": 22.51,
+      "max_ms": 599.82
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.29,
+      "p50_ms": 0.49,
+      "p95_ms": 3.57,
+      "p99_ms": 19.07,
+      "min_ms": 0.22,
+      "max_ms": 22.69
+     },
+     "cache": {
+      "hits": 233,
+      "misses": 146,
+      "coalesced": 21,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5825
+     },
+     "origin": {
+      "fetches": 146,
+      "bytes": 55306153,
+      "baseline_fetches": 400,
+      "reduction": 0.635,
+      "observed_at_origin": 146
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 105,
+       "failed": 0,
+       "share": 0.2625,
+       "avg_ms": 223.9,
+       "p95_ms": 511.06,
+       "hits": 64,
+       "hit_ratio": 0.6095238095238096
+      },
+      "singapore-edge": {
+       "requests": 295,
+       "failed": 0,
+       "share": 0.7375,
+       "avg_ms": 116.53,
+       "p95_ms": 291.27,
+       "hits": 169,
+       "hit_ratio": 0.5728813559322034
+      }
+     },
+     "errors": {},
+     "evictions": 128,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 161,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42,
+        "singapore-edge": 119
+       },
+       "avg_ms": 134.98
+      },
+      {
+       "t": 1.0,
+       "requests": 158,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 121,
+        "india-edge": 37
+       },
+       "avg_ms": 141.44
+      },
+      {
+       "t": 2.0,
+       "requests": 81,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 26,
+        "singapore-edge": 55
+       },
+       "avg_ms": 170.44
+      }
+     ],
+     "events": [],
+     "variant": "hybrid",
+     "routing": "hybrid",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 28,
+    "experiment_id": "6c842c64c72e",
+    "variant": "random",
+    "repetition": 1,
+    "routing_strategy": "random",
+    "cache_policy": "lru",
+    "started_at": 1792513034.1895297,
+    "finished_at": 1792513041.820694,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 6.422,
+     "throughput_rps": 62.29,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 296.92,
+      "p50_ms": 129.1,
+      "p95_ms": 1244.58,
+      "p99_ms": 2123.73,
+      "min_ms": 22.53,
+      "max_ms": 2575.31
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.07,
+      "p50_ms": 0.41,
+      "p95_ms": 3.0,
+      "p99_ms": 17.19,
+      "min_ms": 0.21,
+      "max_ms": 20.53
+     },
+     "cache": {
+      "hits": 236,
+      "misses": 155,
+      "coalesced": 9,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.59
+     },
+     "origin": {
+      "fetches": 155,
+      "bytes": 56373368,
+      "baseline_fetches": 400,
+      "reduction": 0.6125,
+      "observed_at_origin": 155
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 141,
+       "failed": 0,
+       "share": 0.3525,
+       "avg_ms": 191.06,
+       "p95_ms": 467.72,
+       "hits": 83,
+       "hit_ratio": 0.5886524822695035
+      },
+      "singapore-edge": {
+       "requests": 132,
+       "failed": 0,
+       "share": 0.33,
+       "avg_ms": 113.75,
+       "p95_ms": 318.33,
+       "hits": 70,
+       "hit_ratio": 0.5303030303030303
+      },
+      "usa-edge": {
+       "requests": 127,
+       "failed": 0,
+       "share": 0.3175,
+       "avg_ms": 604.82,
+       "p95_ms": 1719.68,
+       "hits": 83,
+       "hit_ratio": 0.6535433070866141
+      }
+     },
+     "errors": {},
+     "evictions": 123,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 85,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 32,
+        "singapore-edge": 34,
+        "usa-edge": 19
+       },
+       "avg_ms": 187.78
+      },
+      {
+       "t": 1.0,
+       "requests": 97,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 32,
+        "usa-edge": 26,
+        "india-edge": 39
+       },
+       "avg_ms": 266.57
+      },
+      {
+       "t": 2.0,
+       "requests": 71,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 23,
+        "usa-edge": 28,
+        "singapore-edge": 20
+       },
+       "avg_ms": 269.62
+      },
+      {
+       "t": 3.0,
+       "requests": 67,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 27,
+        "india-edge": 15,
+        "usa-edge": 25
+       },
+       "avg_ms": 329.97
+      },
+      {
+       "t": 4.0,
+       "requests": 70,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 19,
+        "india-edge": 32,
+        "singapore-edge": 19
+       },
+       "avg_ms": 334.66
+      },
+      {
+       "t": 5.0,
+       "requests": 9,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 9
+       },
+       "avg_ms": 1126.02
+      },
+      {
+       "t": 6.0,
+       "requests": 1,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 1
+       },
+       "avg_ms": 2137.41
+      }
+     ],
+     "events": [],
+     "variant": "random",
+     "routing": "random",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 29,
+    "experiment_id": "6c842c64c72e",
+    "variant": "nearest",
+    "repetition": 1,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513041.8299487,
+    "finished_at": 1792513050.593162,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.552,
+     "throughput_rps": 52.96,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 429.78,
+      "p50_ms": 396.9,
+      "p95_ms": 745.89,
+      "p99_ms": 823.44,
+      "min_ms": 62.67,
+      "max_ms": 957.2
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.01,
+      "p50_ms": 0.41,
+      "p95_ms": 2.61,
+      "p99_ms": 15.68,
+      "min_ms": 0.23,
+      "max_ms": 18.28
+     },
+     "cache": {
+      "hits": 220,
+      "misses": 157,
+      "coalesced": 23,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.55
+     },
+     "origin": {
+      "fetches": 157,
+      "bytes": 56463312,
+      "baseline_fetches": 400,
+      "reduction": 0.6075,
+      "observed_at_origin": 157
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 429.78,
+       "p95_ms": 745.89,
+       "hits": 220,
+       "hit_ratio": 0.55
+      }
+     },
+     "errors": {},
+     "evictions": 151,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 384.81
+      },
+      {
+       "t": 1.0,
+       "requests": 60,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 60
+       },
+       "avg_ms": 407.48
+      },
+      {
+       "t": 2.0,
+       "requests": 60,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 60
+       },
+       "avg_ms": 404.94
+      },
+      {
+       "t": 3.0,
+       "requests": 50,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 50
+       },
+       "avg_ms": 410.05
+      },
+      {
+       "t": 4.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 520.74
+      },
+      {
+       "t": 5.0,
+       "requests": 61,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 61
+       },
+       "avg_ms": 411.21
+      },
+      {
+       "t": 6.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 459.94
+      },
+      {
+       "t": 7.0,
+       "requests": 22,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 22
+       },
+       "avg_ms": 484.33
+      }
+     ],
+     "events": [],
+     "variant": "nearest",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 30,
+    "experiment_id": "6c842c64c72e",
+    "variant": "lowest_latency",
+    "repetition": 1,
+    "routing_strategy": "lowest_latency",
+    "cache_policy": "lru",
+    "started_at": 1792513050.6023116,
+    "finished_at": 1792513059.3985634,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.586,
+     "throughput_rps": 52.73,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 433.09,
+      "p50_ms": 406.75,
+      "p95_ms": 722.09,
+      "p99_ms": 835.23,
+      "min_ms": 62.34,
+      "max_ms": 936.31
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.01,
+      "p50_ms": 0.4,
+      "p95_ms": 2.57,
+      "p99_ms": 15.15,
+      "min_ms": 0.23,
+      "max_ms": 17.84
+     },
+     "cache": {
+      "hits": 239,
+      "misses": 150,
+      "coalesced": 11,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5975
+     },
+     "origin": {
+      "fetches": 150,
+      "bytes": 53678047,
+      "baseline_fetches": 400,
+      "reduction": 0.625,
+      "observed_at_origin": 150
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 433.09,
+       "p95_ms": 722.09,
+       "hits": 239,
+       "hit_ratio": 0.5975
+      }
+     },
+     "errors": {},
+     "evictions": 144,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 50,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 50
+       },
+       "avg_ms": 377.95
+      },
+      {
+       "t": 1.0,
+       "requests": 56,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 56
+       },
+       "avg_ms": 415.43
+      },
+      {
+       "t": 2.0,
+       "requests": 65,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 65
+       },
+       "avg_ms": 375.62
+      },
+      {
+       "t": 3.0,
+       "requests": 53,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 53
+       },
+       "avg_ms": 442.23
+      },
+      {
+       "t": 4.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 527.42
+      },
+      {
+       "t": 5.0,
+       "requests": 61,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 61
+       },
+       "avg_ms": 422.98
+      },
+      {
+       "t": 6.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 490.4
+      },
+      {
+       "t": 7.0,
+       "requests": 26,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 26
+       },
+       "avg_ms": 469.94
+      }
+     ],
+     "events": [],
+     "variant": "lowest_latency",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 31,
+    "experiment_id": "6c842c64c72e",
+    "variant": "least_loaded",
+    "repetition": 1,
+    "routing_strategy": "least_loaded",
+    "cache_policy": "lru",
+    "started_at": 1792513059.4077907,
+    "finished_at": 1792513066.1063032,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 5.487,
+     "throughput_rps": 72.9,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 258.46,
+      "p50_ms": 118.6,
+      "p95_ms": 1072.95,
+      "p99_ms": 1693.2,
+      "min_ms": 23.27,
+      "max_ms": 2127.86
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.06,
+      "p50_ms": 0.38,
+      "p95_ms": 2.77,
+      "p99_ms": 17.35,
+      "min_ms": 0.22,
+      "max_ms": 20.14
+     },
+     "cache": {
+      "hits": 224,
+      "misses": 163,
+      "coalesced": 13,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.56
+     },
+     "origin": {
+      "fetches": 163,
+      "bytes": 62118849,
+      "baseline_fetches": 400,
+      "reduction": 0.5925,
+      "observed_at_origin": 163
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 52,
+       "failed": 0,
+       "share": 0.13,
+       "avg_ms": 198.58,
+       "p95_ms": 421.08,
+       "hits": 28,
+       "hit_ratio": 0.5384615384615384
+      },
+      "singapore-edge": {
+       "requests": 230,
+       "failed": 0,
+       "share": 0.575,
+       "avg_ms": 125.2,
+       "p95_ms": 308.57,
+       "hits": 128,
+       "hit_ratio": 0.5565217391304348
+      },
+      "usa-edge": {
+       "requests": 118,
+       "failed": 0,
+       "share": 0.295,
+       "avg_ms": 544.59,
+       "p95_ms": 1686.95,
+       "hits": 68,
+       "hit_ratio": 0.576271186440678
+      }
+     },
+     "errors": {},
+     "evictions": 129,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 93,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6,
+        "singapore-edge": 60,
+        "usa-edge": 27
+       },
+       "avg_ms": 163.07
+      },
+      {
+       "t": 1.0,
+       "requests": 102,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 28,
+        "singapore-edge": 58,
+        "india-edge": 16
+       },
+       "avg_ms": 237.92
+      },
+      {
+       "t": 2.0,
+       "requests": 96,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 23,
+        "singapore-edge": 55,
+        "india-edge": 18
+       },
+       "avg_ms": 248.79
+      },
+      {
+       "t": 3.0,
+       "requests": 95,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 56,
+        "india-edge": 12,
+        "usa-edge": 27
+       },
+       "avg_ms": 254.09
+      },
+      {
+       "t": 4.0,
+       "requests": 10,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 9,
+        "singapore-edge": 1
+       },
+       "avg_ms": 873.59
+      },
+      {
+       "t": 5.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 4
+       },
+       "avg_ms": 1797.9
+      }
+     ],
+     "events": [],
+     "variant": "least_loaded",
+     "routing": "least_loaded",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 32,
+    "experiment_id": "6c842c64c72e",
+    "variant": "hybrid",
+    "repetition": 1,
+    "routing_strategy": "hybrid",
+    "cache_policy": "lru",
+    "started_at": 1792513066.1167705,
+    "finished_at": 1792513070.131078,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 2.804,
+     "throughput_rps": 142.66,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 149.14,
+      "p50_ms": 85.51,
+      "p95_ms": 411.66,
+      "p99_ms": 517.08,
+      "min_ms": 22.82,
+      "max_ms": 540.68
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.24,
+      "p50_ms": 0.47,
+      "p95_ms": 2.96,
+      "p99_ms": 18.31,
+      "min_ms": 0.25,
+      "max_ms": 21.09
+     },
+     "cache": {
+      "hits": 228,
+      "misses": 151,
+      "coalesced": 21,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.57
+     },
+     "origin": {
+      "fetches": 151,
+      "bytes": 57521370,
+      "baseline_fetches": 400,
+      "reduction": 0.6225,
+      "observed_at_origin": 151
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 129,
+       "failed": 0,
+       "share": 0.3225,
+       "avg_ms": 197.61,
+       "p95_ms": 486.18,
+       "hits": 76,
+       "hit_ratio": 0.5891472868217055
+      },
+      "singapore-edge": {
+       "requests": 271,
+       "failed": 0,
+       "share": 0.6775,
+       "avg_ms": 126.07,
+       "p95_ms": 361.66,
+       "hits": 152,
+       "hit_ratio": 0.5608856088560885
+      }
+     },
+     "errors": {},
+     "evictions": 127,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 159,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 50,
+        "singapore-edge": 109
+       },
+       "avg_ms": 133.82
+      },
+      {
+       "t": 1.0,
+       "requests": 152,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47,
+        "singapore-edge": 105
+       },
+       "avg_ms": 146.57
+      },
+      {
+       "t": 2.0,
+       "requests": 89,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 57,
+        "india-edge": 32
+       },
+       "avg_ms": 180.9
+      }
+     ],
+     "events": [],
+     "variant": "hybrid",
+     "routing": "hybrid",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 33,
+    "experiment_id": "6c842c64c72e",
+    "variant": "random",
+    "repetition": 2,
+    "routing_strategy": "random",
+    "cache_policy": "lru",
+    "started_at": 1792513070.140091,
+    "finished_at": 1792513076.8283901,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 5.479,
+     "throughput_rps": 73.0,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 273.9,
+      "p50_ms": 133.51,
+      "p95_ms": 1072.81,
+      "p99_ms": 1693.66,
+      "min_ms": 23.13,
+      "max_ms": 2618.95
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.12,
+      "p50_ms": 0.36,
+      "p95_ms": 2.72,
+      "p99_ms": 20.14,
+      "min_ms": 0.23,
+      "max_ms": 23.27
+     },
+     "cache": {
+      "hits": 223,
+      "misses": 167,
+      "coalesced": 10,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5575
+     },
+     "origin": {
+      "fetches": 167,
+      "bytes": 62686839,
+      "baseline_fetches": 400,
+      "reduction": 0.5825,
+      "observed_at_origin": 167
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 160,
+       "failed": 0,
+       "share": 0.4,
+       "avg_ms": 184.38,
+       "p95_ms": 434.44,
+       "hits": 96,
+       "hit_ratio": 0.6
+      },
+      "singapore-edge": {
+       "requests": 114,
+       "failed": 0,
+       "share": 0.285,
+       "avg_ms": 126.01,
+       "p95_ms": 362.8,
+       "hits": 60,
+       "hit_ratio": 0.5263157894736842
+      },
+      "usa-edge": {
+       "requests": 126,
+       "failed": 0,
+       "share": 0.315,
+       "avg_ms": 521.37,
+       "p95_ms": 1522.37,
+       "hits": 67,
+       "hit_ratio": 0.5317460317460317
+      }
+     },
+     "errors": {},
+     "evictions": 129,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 89,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42,
+        "singapore-edge": 26,
+        "usa-edge": 21
+       },
+       "avg_ms": 169.87
+      },
+      {
+       "t": 1.0,
+       "requests": 101,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38,
+        "usa-edge": 32,
+        "singapore-edge": 31
+       },
+       "avg_ms": 234.06
+      },
+      {
+       "t": 2.0,
+       "requests": 65,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 21,
+        "singapore-edge": 17,
+        "usa-edge": 27
+       },
+       "avg_ms": 376.78
+      },
+      {
+       "t": 3.0,
+       "requests": 88,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39,
+        "singapore-edge": 23,
+        "usa-edge": 26
+       },
+       "avg_ms": 248.31
+      },
+      {
+       "t": 4.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 17,
+        "india-edge": 20,
+        "usa-edge": 17
+       },
+       "avg_ms": 375.39
+      },
+      {
+       "t": 5.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 3
+       },
+       "avg_ms": 1395.69
+      }
+     ],
+     "events": [],
+     "variant": "random",
+     "routing": "random",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 34,
+    "experiment_id": "6c842c64c72e",
+    "variant": "nearest",
+    "repetition": 2,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513076.8373973,
+    "finished_at": 1792513085.736258,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.689,
+     "throughput_rps": 52.02,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 441.14,
+      "p50_ms": 409.71,
+      "p95_ms": 752.71,
+      "p99_ms": 874.12,
+      "min_ms": 60.42,
+      "max_ms": 1017.98
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.97,
+      "p50_ms": 0.37,
+      "p95_ms": 2.56,
+      "p99_ms": 15.84,
+      "min_ms": 0.21,
+      "max_ms": 18.37
+     },
+     "cache": {
+      "hits": 230,
+      "misses": 158,
+      "coalesced": 12,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.575
+     },
+     "origin": {
+      "fetches": 158,
+      "bytes": 51915315,
+      "baseline_fetches": 400,
+      "reduction": 0.605,
+      "observed_at_origin": 158
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 441.14,
+       "p95_ms": 752.71,
+       "hits": 230,
+       "hit_ratio": 0.575
+      }
+     },
+     "errors": {},
+     "evictions": 152,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 411.33
+      },
+      {
+       "t": 1.0,
+       "requests": 58,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 58
+       },
+       "avg_ms": 445.1
+      },
+      {
+       "t": 2.0,
+       "requests": 64,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 64
+       },
+       "avg_ms": 370.26
+      },
+      {
+       "t": 3.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 424.65
+      },
+      {
+       "t": 4.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 518.93
+      },
+      {
+       "t": 5.0,
+       "requests": 62,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 62
+       },
+       "avg_ms": 423.14
+      },
+      {
+       "t": 6.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 499.95
+      },
+      {
+       "t": 7.0,
+       "requests": 31,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 31
+       },
+       "avg_ms": 474.68
+      }
+     ],
+     "events": [],
+     "variant": "nearest",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 35,
+    "experiment_id": "6c842c64c72e",
+    "variant": "lowest_latency",
+    "repetition": 2,
+    "routing_strategy": "lowest_latency",
+    "cache_policy": "lru",
+    "started_at": 1792513085.7451828,
+    "finished_at": 1792513094.8849134,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 7.929,
+     "throughput_rps": 50.44,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 446.13,
+      "p50_ms": 421.39,
+      "p95_ms": 767.87,
+      "p99_ms": 873.62,
+      "min_ms": 60.17,
+      "max_ms": 946.48
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.99,
+      "p50_ms": 0.38,
+      "p95_ms": 2.83,
+      "p99_ms": 16.25,
+      "min_ms": 0.21,
+      "max_ms": 19.2
+     },
+     "cache": {
+      "hits": 237,
+      "misses": 153,
+      "coalesced": 10,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.5925
+     },
+     "origin": {
+      "fetches": 153,
+      "bytes": 53217337,
+      "baseline_fetches": 400,
+      "reduction": 0.6175,
+      "observed_at_origin": 153
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 446.13,
+       "p95_ms": 767.87,
+       "hits": 237,
+       "hit_ratio": 0.5925
+      }
+     },
+     "errors": {},
+     "evictions": 147,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 393.07
+      },
+      {
+       "t": 1.0,
+       "requests": 60,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 60
+       },
+       "avg_ms": 415.11
+      },
+      {
+       "t": 2.0,
+       "requests": 61,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 61
+       },
+       "avg_ms": 371.69
+      },
+      {
+       "t": 3.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 483.91
+      },
+      {
+       "t": 4.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 523.39
+      },
+      {
+       "t": 5.0,
+       "requests": 55,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 55
+       },
+       "avg_ms": 456.38
+      },
+      {
+       "t": 6.0,
+       "requests": 53,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 53
+       },
+       "avg_ms": 456.75
+      },
+      {
+       "t": 7.0,
+       "requests": 34,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 34
+       },
+       "avg_ms": 520.88
+      }
+     ],
+     "events": [],
+     "variant": "lowest_latency",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 36,
+    "experiment_id": "6c842c64c72e",
+    "variant": "least_loaded",
+    "repetition": 2,
+    "routing_strategy": "least_loaded",
+    "cache_policy": "lru",
+    "started_at": 1792513094.8971329,
+    "finished_at": 1792513102.2216628,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 6.116,
+     "throughput_rps": 65.4,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 268.3,
+      "p50_ms": 132.03,
+      "p95_ms": 1031.22,
+      "p99_ms": 1912.23,
+      "min_ms": 26.22,
+      "max_ms": 2187.25
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.03,
+      "p50_ms": 0.41,
+      "p95_ms": 2.28,
+      "p99_ms": 15.45,
+      "min_ms": 0.22,
+      "max_ms": 17.82
+     },
+     "cache": {
+      "hits": 238,
+      "misses": 150,
+      "coalesced": 12,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.595
+     },
+     "origin": {
+      "fetches": 150,
+      "bytes": 49403659,
+      "baseline_fetches": 400,
+      "reduction": 0.625,
+      "observed_at_origin": 150
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 42,
+       "failed": 0,
+       "share": 0.105,
+       "avg_ms": 251.06,
+       "p95_ms": 511.88,
+       "hits": 27,
+       "hit_ratio": 0.6428571428571429
+      },
+      "singapore-edge": {
+       "requests": 236,
+       "failed": 0,
+       "share": 0.59,
+       "avg_ms": 122.96,
+       "p95_ms": 301.68,
+       "hits": 138,
+       "hit_ratio": 0.5847457627118644
+      },
+      "usa-edge": {
+       "requests": 122,
+       "failed": 0,
+       "share": 0.305,
+       "avg_ms": 555.39,
+       "p95_ms": 1692.26,
+       "hits": 73,
+       "hit_ratio": 0.5983606557377049
+      }
+     },
+     "errors": {},
+     "evictions": 120,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 95,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 14,
+        "singapore-edge": 59,
+        "usa-edge": 22
+       },
+       "avg_ms": 174.87
+      },
+      {
+       "t": 1.0,
+       "requests": 97,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 30,
+        "singapore-edge": 64,
+        "india-edge": 3
+       },
+       "avg_ms": 193.2
+      },
+      {
+       "t": 2.0,
+       "requests": 98,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 30,
+        "singapore-edge": 50,
+        "india-edge": 18
+       },
+       "avg_ms": 301.24
+      },
+      {
+       "t": 3.0,
+       "requests": 81,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 25,
+        "singapore-edge": 53,
+        "india-edge": 3
+       },
+       "avg_ms": 255.69
+      },
+      {
+       "t": 4.0,
+       "requests": 25,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 10,
+        "usa-edge": 11,
+        "india-edge": 4
+       },
+       "avg_ms": 570.6
+      },
+      {
+       "t": 5.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 3
+       },
+       "avg_ms": 1764.96
+      },
+      {
+       "t": 6.0,
+       "requests": 1,
+       "errors": 0,
+       "per_edge": {
+        "usa-edge": 1
+       },
+       "avg_ms": 2176.18
+      }
+     ],
+     "events": [],
+     "variant": "least_loaded",
+     "routing": "least_loaded",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 37,
+    "experiment_id": "6c842c64c72e",
+    "variant": "hybrid",
+    "repetition": 2,
+    "routing_strategy": "hybrid",
+    "cache_policy": "lru",
+    "started_at": 1792513102.2300563,
+    "finished_at": 1792513106.348222,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 2.908,
+     "throughput_rps": 137.57,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 146.79,
+      "p50_ms": 84.53,
+      "p95_ms": 409.15,
+      "p99_ms": 497.07,
+      "min_ms": 19.9,
+      "max_ms": 613.06
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 1.06,
+      "p50_ms": 0.42,
+      "p95_ms": 3.36,
+      "p99_ms": 14.62,
+      "min_ms": 0.2,
+      "max_ms": 16.98
+     },
+     "cache": {
+      "hits": 226,
+      "misses": 154,
+      "coalesced": 20,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.565
+     },
+     "origin": {
+      "fetches": 154,
+      "bytes": 63041971,
+      "baseline_fetches": 400,
+      "reduction": 0.615,
+      "observed_at_origin": 154
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 123,
+       "failed": 0,
+       "share": 0.3075,
+       "avg_ms": 197.56,
+       "p95_ms": 469.64,
+       "hits": 67,
+       "hit_ratio": 0.5447154471544715
+      },
+      "singapore-edge": {
+       "requests": 277,
+       "failed": 0,
+       "share": 0.6925,
+       "avg_ms": 124.25,
+       "p95_ms": 322.58,
+       "hits": 159,
+       "hit_ratio": 0.5740072202166066
+      }
+     },
+     "errors": {},
+     "evictions": 134,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 145,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41,
+        "singapore-edge": 104
+       },
+       "avg_ms": 144.55
+      },
+      {
+       "t": 1.0,
+       "requests": 174,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 121,
+        "india-edge": 53
+       },
+       "avg_ms": 138.8
+      },
+      {
+       "t": 2.0,
+       "requests": 81,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 52,
+        "india-edge": 29
+       },
+       "avg_ms": 167.97
+      }
+     ],
+     "events": [],
+     "variant": "hybrid",
+     "routing": "hybrid",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   }
+  ],
+  "progress": null
+ },
+ {
+  "id": "eb3e3e993fbe",
+  "name": "B. Cache comparison @ 2 MB (400 req x 3)",
+  "type": "cache_comparison",
+  "config": {
+   "name": "B. Cache comparison @ 2 MB (400 req x 3)",
+   "type": "cache_comparison",
+   "workload": {
+    "total_requests": 400,
+    "concurrency": 8,
+    "rate_rps": 0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "per_request",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "nearest",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 2097152,
+   "cache_ttl_seconds": 10.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 3,
+   "failure": null,
+   "degradation": null
+  },
+  "status": "completed",
+  "created_at": 1792513108.143997,
+  "started_at": 1792513108.1446815,
+  "finished_at": 1792513235.6735232,
+  "error": null,
+  "summary": {
+   "type": "cache_comparison",
+   "variants": [
+    {
+     "label": "none",
+     "routing": "nearest",
+     "cache_policy": "none",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 191.55,
+      "p50_ms": 95.6867,
+      "p95_ms": 464.63,
+      "p99_ms": 542.76,
+      "throughput_rps": 40.7067,
+      "hit_ratio": null,
+      "origin_fetches": 400,
+      "origin_bytes": 263029439,
+      "origin_reduction": 0.0,
+      "failure_rate": 0.0,
+      "evictions": 0,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    },
+    {
+     "label": "lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 180.3033,
+      "p50_ms": 93.7067,
+      "p95_ms": 465.7367,
+      "p99_ms": 536.1633,
+      "throughput_rps": 43.0833,
+      "hit_ratio": 0.3108,
+      "origin_fetches": 246.3333,
+      "origin_bytes": 116104445.6667,
+      "origin_reduction": 0.3842,
+      "failure_rate": 0.0,
+      "evictions": 242.6667,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    },
+    {
+     "label": "lfu",
+     "routing": "nearest",
+     "cache_policy": "lfu",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 179.36,
+      "p50_ms": 94.18,
+      "p95_ms": 454.0533,
+      "p99_ms": 538.7,
+      "throughput_rps": 43.66,
+      "hit_ratio": 0.3275,
+      "origin_fetches": 241,
+      "origin_bytes": 113980769.3333,
+      "origin_reduction": 0.3975,
+      "failure_rate": 0.0,
+      "evictions": 237,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    },
+    {
+     "label": "ttl",
+     "routing": "nearest",
+     "cache_policy": "ttl",
+     "runs": 3,
+     "metrics": {
+      "avg_ms": 181.73,
+      "p50_ms": 95.2,
+      "p95_ms": 457.78,
+      "p99_ms": 544.8233,
+      "throughput_rps": 42.85,
+      "hit_ratio": 0.3075,
+      "origin_fetches": 245.6667,
+      "origin_bytes": 120421124.3333,
+      "origin_reduction": 0.3858,
+      "failure_rate": 0.0,
+      "evictions": 242.3333,
+      "total_requests": 400,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    }
+   ],
+   "repetitions": 3
+  },
+  "runs": [
+   {
+    "id": 38,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "none",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "none",
+    "started_at": 1792513108.1614408,
+    "finished_at": 1792513119.0993507,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.728,
+     "throughput_rps": 41.12,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 189.82,
+      "p50_ms": 95.35,
+      "p95_ms": 462.48,
+      "p99_ms": 543.83,
+      "min_ms": 47.41,
+      "max_ms": 650.05
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.47,
+      "p50_ms": 0.37,
+      "p95_ms": 0.87,
+      "p99_ms": 2.63,
+      "min_ms": 0.25,
+      "max_ms": 5.55
+     },
+     "cache": {
+      "hits": 0,
+      "misses": 0,
+      "coalesced": 0,
+      "bypass": 400,
+      "eligible_lookups": 0,
+      "hit_ratio": null
+     },
+     "origin": {
+      "fetches": 400,
+      "bytes": 263029439,
+      "baseline_fetches": 400,
+      "reduction": 0.0,
+      "observed_at_origin": 400
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 189.82,
+       "p95_ms": 462.48,
+       "hits": 0,
+       "hit_ratio": null
+      }
+     },
+     "errors": {},
+     "evictions": 0,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 185.69
+      },
+      {
+       "t": 1.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 173.84
+      },
+      {
+       "t": 2.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 195.95
+      },
+      {
+       "t": 3.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 151.03
+      },
+      {
+       "t": 4.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 37
+       },
+       "avg_ms": 199.54
+      },
+      {
+       "t": 5.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 206.54
+      },
+      {
+       "t": 6.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 187.29
+      },
+      {
+       "t": 7.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 210.56
+      },
+      {
+       "t": 8.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 166.08
+      },
+      {
+       "t": 9.0,
+       "requests": 22,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 22
+       },
+       "avg_ms": 273.03
+      }
+     ],
+     "events": [],
+     "variant": "none",
+     "routing": "nearest",
+     "cache_policy": "none",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 39,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lru",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513119.1087098,
+    "finished_at": 1792513129.6808221,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.361,
+     "throughput_rps": 42.73,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 181.2,
+      "p50_ms": 95.64,
+      "p95_ms": 470.13,
+      "p99_ms": 543.58,
+      "min_ms": 24.29,
+      "max_ms": 579.76
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.46,
+      "p50_ms": 0.36,
+      "p95_ms": 0.84,
+      "p99_ms": 2.68,
+      "min_ms": 0.23,
+      "max_ms": 5.37
+     },
+     "cache": {
+      "hits": 132,
+      "misses": 243,
+      "coalesced": 25,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.33
+     },
+     "origin": {
+      "fetches": 243,
+      "bytes": 111615908,
+      "baseline_fetches": 400,
+      "reduction": 0.3925,
+      "observed_at_origin": 243
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 181.2,
+       "p95_ms": 470.13,
+       "hits": 132,
+       "hit_ratio": 0.33
+      }
+     },
+     "errors": {},
+     "evictions": 239,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38
+       },
+       "avg_ms": 178.21
+      },
+      {
+       "t": 1.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 181.5
+      },
+      {
+       "t": 2.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 180.13
+      },
+      {
+       "t": 3.0,
+       "requests": 53,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 53
+       },
+       "avg_ms": 144.48
+      },
+      {
+       "t": 4.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 188.69
+      },
+      {
+       "t": 5.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 198.21
+      },
+      {
+       "t": 6.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 165.23
+      },
+      {
+       "t": 7.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 198.95
+      },
+      {
+       "t": 8.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 173.74
+      },
+      {
+       "t": 9.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 420.07
+      }
+     ],
+     "events": [],
+     "variant": "lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 40,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lfu",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lfu",
+    "started_at": 1792513129.689819,
+    "finished_at": 1792513140.1188774,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.197,
+     "throughput_rps": 43.49,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 180.17,
+      "p50_ms": 93.72,
+      "p95_ms": 455.91,
+      "p99_ms": 532.12,
+      "min_ms": 23.84,
+      "max_ms": 590.8
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.54,
+      "p50_ms": 0.44,
+      "p95_ms": 1.05,
+      "p99_ms": 3.61,
+      "min_ms": 0.24,
+      "max_ms": 5.83
+     },
+     "cache": {
+      "hits": 128,
+      "misses": 241,
+      "coalesced": 31,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.32
+     },
+     "origin": {
+      "fetches": 241,
+      "bytes": 115283594,
+      "baseline_fetches": 400,
+      "reduction": 0.3975,
+      "observed_at_origin": 241
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 180.17,
+       "p95_ms": 455.91,
+       "hits": 128,
+       "hit_ratio": 0.32
+      }
+     },
+     "errors": {},
+     "evictions": 237,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 39,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39
+       },
+       "avg_ms": 169.08
+      },
+      {
+       "t": 1.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 180.06
+      },
+      {
+       "t": 2.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 171.53
+      },
+      {
+       "t": 3.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 54
+       },
+       "avg_ms": 153.74
+      },
+      {
+       "t": 4.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41
+       },
+       "avg_ms": 183.64
+      },
+      {
+       "t": 5.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 214.75
+      },
+      {
+       "t": 6.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 161.04
+      },
+      {
+       "t": 7.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41
+       },
+       "avg_ms": 213.28
+      },
+      {
+       "t": 8.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 160.81
+      },
+      {
+       "t": 9.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 393.05
+      }
+     ],
+     "events": [],
+     "variant": "lfu",
+     "routing": "nearest",
+     "cache_policy": "lfu",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 41,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "ttl",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "ttl",
+    "started_at": 1792513140.1347725,
+    "finished_at": 1792513150.753444,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.407,
+     "throughput_rps": 42.52,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 183.78,
+      "p50_ms": 95.69,
+      "p95_ms": 461.05,
+      "p99_ms": 549.03,
+      "min_ms": 21.63,
+      "max_ms": 622.89
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.55,
+      "p50_ms": 0.43,
+      "p95_ms": 1.16,
+      "p99_ms": 3.16,
+      "min_ms": 0.21,
+      "max_ms": 6.01
+     },
+     "cache": {
+      "hits": 122,
+      "misses": 249,
+      "coalesced": 29,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.305
+     },
+     "origin": {
+      "fetches": 249,
+      "bytes": 121742443,
+      "baseline_fetches": 400,
+      "reduction": 0.3775,
+      "observed_at_origin": 249
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 183.78,
+       "p95_ms": 461.05,
+       "hits": 122,
+       "hit_ratio": 0.305
+      }
+     },
+     "errors": {},
+     "evictions": 245,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 31,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 31
+       },
+       "avg_ms": 189.59
+      },
+      {
+       "t": 1.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 168.23
+      },
+      {
+       "t": 2.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 177.42
+      },
+      {
+       "t": 3.0,
+       "requests": 52,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 52
+       },
+       "avg_ms": 154.57
+      },
+      {
+       "t": 4.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 207.78
+      },
+      {
+       "t": 5.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 186.3
+      },
+      {
+       "t": 6.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 164.71
+      },
+      {
+       "t": 7.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38
+       },
+       "avg_ms": 212.21
+      },
+      {
+       "t": 8.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 181.32
+      },
+      {
+       "t": 9.0,
+       "requests": 11,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 11
+       },
+       "avg_ms": 299.75
+      }
+     ],
+     "events": [],
+     "variant": "ttl",
+     "routing": "nearest",
+     "cache_policy": "ttl",
+     "repetition": 0
+    },
+    "events": []
+   },
+   {
+    "id": 42,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "none",
+    "repetition": 1,
+    "routing_strategy": "nearest",
+    "cache_policy": "none",
+    "started_at": 1792513150.762205,
+    "finished_at": 1792513161.972185,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.997,
+     "throughput_rps": 40.01,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 194.45,
+      "p50_ms": 96.58,
+      "p95_ms": 473.35,
+      "p99_ms": 541.67,
+      "min_ms": 48.01,
+      "max_ms": 562.14
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.52,
+      "p50_ms": 0.43,
+      "p95_ms": 0.92,
+      "p99_ms": 2.65,
+      "min_ms": 0.25,
+      "max_ms": 5.79
+     },
+     "cache": {
+      "hits": 0,
+      "misses": 0,
+      "coalesced": 0,
+      "bypass": 400,
+      "eligible_lookups": 0,
+      "hit_ratio": null
+     },
+     "origin": {
+      "fetches": 400,
+      "bytes": 263029439,
+      "baseline_fetches": 400,
+      "reduction": 0.0,
+      "observed_at_origin": 400
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 194.45,
+       "p95_ms": 473.35,
+       "hits": 0,
+       "hit_ratio": null
+      }
+     },
+     "errors": {},
+     "evictions": 0,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 33,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 33
+       },
+       "avg_ms": 200.26
+      },
+      {
+       "t": 1.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 176.53
+      },
+      {
+       "t": 2.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 193.62
+      },
+      {
+       "t": 3.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 156.34
+      },
+      {
+       "t": 4.0,
+       "requests": 39,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39
+       },
+       "avg_ms": 195.14
+      },
+      {
+       "t": 5.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 37
+       },
+       "avg_ms": 220.93
+      },
+      {
+       "t": 6.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 188.1
+      },
+      {
+       "t": 7.0,
+       "requests": 39,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39
+       },
+       "avg_ms": 187.67
+      },
+      {
+       "t": 8.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 207.07
+      },
+      {
+       "t": 9.0,
+       "requests": 28,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 28
+       },
+       "avg_ms": 250.44
+      }
+     ],
+     "events": [],
+     "variant": "none",
+     "routing": "nearest",
+     "cache_policy": "none",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 43,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lru",
+    "repetition": 1,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513161.986486,
+    "finished_at": 1792513172.4867096,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.287,
+     "throughput_rps": 43.07,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 180.65,
+      "p50_ms": 93.82,
+      "p95_ms": 470.63,
+      "p99_ms": 527.74,
+      "min_ms": 22.95,
+      "max_ms": 560.74
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.57,
+      "p50_ms": 0.44,
+      "p95_ms": 1.18,
+      "p99_ms": 3.51,
+      "min_ms": 0.25,
+      "max_ms": 6.29
+     },
+     "cache": {
+      "hits": 123,
+      "misses": 247,
+      "coalesced": 30,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.3075
+     },
+     "origin": {
+      "fetches": 247,
+      "bytes": 118926555,
+      "baseline_fetches": 400,
+      "reduction": 0.3825,
+      "observed_at_origin": 247
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 180.65,
+       "p95_ms": 470.63,
+       "hits": 123,
+       "hit_ratio": 0.3075
+      }
+     },
+     "errors": {},
+     "evictions": 244,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 174.09
+      },
+      {
+       "t": 1.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 169.36
+      },
+      {
+       "t": 2.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 172.07
+      },
+      {
+       "t": 3.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 153.96
+      },
+      {
+       "t": 4.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 193.77
+      },
+      {
+       "t": 5.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 210.2
+      },
+      {
+       "t": 6.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 158.11
+      },
+      {
+       "t": 7.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 212.75
+      },
+      {
+       "t": 8.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 166.36
+      },
+      {
+       "t": 9.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 363.57
+      }
+     ],
+     "events": [],
+     "variant": "lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 44,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lfu",
+    "repetition": 1,
+    "routing_strategy": "nearest",
+    "cache_policy": "lfu",
+    "started_at": 1792513172.4974694,
+    "finished_at": 1792513182.7784002,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.071,
+     "throughput_rps": 44.1,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 177.47,
+      "p50_ms": 94.14,
+      "p95_ms": 453.21,
+      "p99_ms": 544.41,
+      "min_ms": 23.89,
+      "max_ms": 646.28
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.45,
+      "p50_ms": 0.38,
+      "p95_ms": 0.72,
+      "p99_ms": 2.17,
+      "min_ms": 0.22,
+      "max_ms": 4.88
+     },
+     "cache": {
+      "hits": 130,
+      "misses": 241,
+      "coalesced": 29,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.325
+     },
+     "origin": {
+      "fetches": 241,
+      "bytes": 110308891,
+      "baseline_fetches": 400,
+      "reduction": 0.3975,
+      "observed_at_origin": 241
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 177.47,
+       "p95_ms": 453.21,
+       "hits": 130,
+       "hit_ratio": 0.325
+      }
+     },
+     "errors": {},
+     "evictions": 237,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 165.04
+      },
+      {
+       "t": 1.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 174.07
+      },
+      {
+       "t": 2.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 179.19
+      },
+      {
+       "t": 3.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 54
+       },
+       "avg_ms": 147.76
+      },
+      {
+       "t": 4.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 182.13
+      },
+      {
+       "t": 5.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38
+       },
+       "avg_ms": 210.79
+      },
+      {
+       "t": 6.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 164.37
+      },
+      {
+       "t": 7.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 191.49
+      },
+      {
+       "t": 8.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 183.68
+      },
+      {
+       "t": 9.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 436.08
+      }
+     ],
+     "events": [],
+     "variant": "lfu",
+     "routing": "nearest",
+     "cache_policy": "lfu",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 45,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "ttl",
+    "repetition": 1,
+    "routing_strategy": "nearest",
+    "cache_policy": "ttl",
+    "started_at": 1792513182.7880325,
+    "finished_at": 1792513193.2468505,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.249,
+     "throughput_rps": 43.25,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 179.76,
+      "p50_ms": 93.78,
+      "p95_ms": 454.71,
+      "p99_ms": 545.16,
+      "min_ms": 20.44,
+      "max_ms": 645.13
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.46,
+      "p50_ms": 0.36,
+      "p95_ms": 0.79,
+      "p99_ms": 2.97,
+      "min_ms": 0.24,
+      "max_ms": 5.91
+     },
+     "cache": {
+      "hits": 126,
+      "misses": 244,
+      "coalesced": 30,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.315
+     },
+     "origin": {
+      "fetches": 244,
+      "bytes": 119054492,
+      "baseline_fetches": 400,
+      "reduction": 0.39,
+      "observed_at_origin": 244
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 179.76,
+       "p95_ms": 454.71,
+       "hits": 126,
+       "hit_ratio": 0.315
+      }
+     },
+     "errors": {},
+     "evictions": 241,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 37
+       },
+       "avg_ms": 183.91
+      },
+      {
+       "t": 1.0,
+       "requests": 50,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 50
+       },
+       "avg_ms": 166.44
+      },
+      {
+       "t": 2.0,
+       "requests": 50,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 50
+       },
+       "avg_ms": 162.46
+      },
+      {
+       "t": 3.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 148.27
+      },
+      {
+       "t": 4.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 179.91
+      },
+      {
+       "t": 5.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 218.87
+      },
+      {
+       "t": 6.0,
+       "requests": 52,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 52
+       },
+       "avg_ms": 165.76
+      },
+      {
+       "t": 7.0,
+       "requests": 35,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 35
+       },
+       "avg_ms": 217.27
+      },
+      {
+       "t": 8.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 168.98
+      },
+      {
+       "t": 9.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 405.21
+      }
+     ],
+     "events": [],
+     "variant": "ttl",
+     "routing": "nearest",
+     "cache_policy": "ttl",
+     "repetition": 1
+    },
+    "events": []
+   },
+   {
+    "id": 46,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "none",
+    "repetition": 2,
+    "routing_strategy": "nearest",
+    "cache_policy": "none",
+    "started_at": 1792513193.2562528,
+    "finished_at": 1792513204.2257948,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.758,
+     "throughput_rps": 40.99,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 190.38,
+      "p50_ms": 95.13,
+      "p95_ms": 458.06,
+      "p99_ms": 542.78,
+      "min_ms": 46.94,
+      "max_ms": 622.78
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.48,
+      "p50_ms": 0.37,
+      "p95_ms": 0.78,
+      "p99_ms": 3.81,
+      "min_ms": 0.26,
+      "max_ms": 7.04
+     },
+     "cache": {
+      "hits": 0,
+      "misses": 0,
+      "coalesced": 0,
+      "bypass": 400,
+      "eligible_lookups": 0,
+      "hit_ratio": null
+     },
+     "origin": {
+      "fetches": 400,
+      "bytes": 263029439,
+      "baseline_fetches": 400,
+      "reduction": 0.0,
+      "observed_at_origin": 400
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 190.38,
+       "p95_ms": 458.06,
+       "hits": 0,
+       "hit_ratio": null
+      }
+     },
+     "errors": {},
+     "evictions": 0,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 35,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 35
+       },
+       "avg_ms": 191.11
+      },
+      {
+       "t": 1.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 173.15
+      },
+      {
+       "t": 2.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 192.35
+      },
+      {
+       "t": 3.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 160.77
+      },
+      {
+       "t": 4.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38
+       },
+       "avg_ms": 195.93
+      },
+      {
+       "t": 5.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 210.13
+      },
+      {
+       "t": 6.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 188.25
+      },
+      {
+       "t": 7.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 38
+       },
+       "avg_ms": 202.1
+      },
+      {
+       "t": 8.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 174.61
+      },
+      {
+       "t": 9.0,
+       "requests": 23,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 23
+       },
+       "avg_ms": 257.37
+      }
+     ],
+     "events": [],
+     "variant": "none",
+     "routing": "nearest",
+     "cache_policy": "none",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 47,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lru",
+    "repetition": 2,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513204.2353606,
+    "finished_at": 1792513214.652003,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.205,
+     "throughput_rps": 43.45,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 179.06,
+      "p50_ms": 91.66,
+      "p95_ms": 456.45,
+      "p99_ms": 537.17,
+      "min_ms": 25.09,
+      "max_ms": 611.46
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.5,
+      "p50_ms": 0.39,
+      "p95_ms": 0.96,
+      "p99_ms": 3.06,
+      "min_ms": 0.23,
+      "max_ms": 5.88
+     },
+     "cache": {
+      "hits": 118,
+      "misses": 249,
+      "coalesced": 33,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.295
+     },
+     "origin": {
+      "fetches": 249,
+      "bytes": 117770874,
+      "baseline_fetches": 400,
+      "reduction": 0.3775,
+      "observed_at_origin": 249
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 179.06,
+       "p95_ms": 456.45,
+       "hits": 118,
+       "hit_ratio": 0.295
+      }
+     },
+     "errors": {},
+     "evictions": 245,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 185.17
+      },
+      {
+       "t": 1.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 164.86
+      },
+      {
+       "t": 2.0,
+       "requests": 51,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 51
+       },
+       "avg_ms": 156.61
+      },
+      {
+       "t": 3.0,
+       "requests": 48,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 48
+       },
+       "avg_ms": 163.05
+      },
+      {
+       "t": 4.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41
+       },
+       "avg_ms": 204.28
+      },
+      {
+       "t": 5.0,
+       "requests": 39,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39
+       },
+       "avg_ms": 198.78
+      },
+      {
+       "t": 6.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 162.35
+      },
+      {
+       "t": 7.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 41
+       },
+       "avg_ms": 193.16
+      },
+      {
+       "t": 8.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 181.72
+      },
+      {
+       "t": 9.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 411.36
+      }
+     ],
+     "events": [],
+     "variant": "lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 48,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "lfu",
+    "repetition": 2,
+    "routing_strategy": "nearest",
+    "cache_policy": "lfu",
+    "started_at": 1792513214.6619036,
+    "finished_at": 1792513225.09029,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.219,
+     "throughput_rps": 43.39,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 180.44,
+      "p50_ms": 94.68,
+      "p95_ms": 453.04,
+      "p99_ms": 539.57,
+      "min_ms": 21.76,
+      "max_ms": 646.44
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.43,
+      "p50_ms": 0.35,
+      "p95_ms": 0.72,
+      "p99_ms": 2.44,
+      "min_ms": 0.22,
+      "max_ms": 5.2
+     },
+     "cache": {
+      "hits": 135,
+      "misses": 241,
+      "coalesced": 24,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.3375
+     },
+     "origin": {
+      "fetches": 241,
+      "bytes": 116349823,
+      "baseline_fetches": 400,
+      "reduction": 0.3975,
+      "observed_at_origin": 241
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 180.44,
+       "p95_ms": 453.04,
+       "hits": 135,
+       "hit_ratio": 0.3375
+      }
+     },
+     "errors": {},
+     "evictions": 237,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 195.16
+      },
+      {
+       "t": 1.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 157.58
+      },
+      {
+       "t": 2.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 167.49
+      },
+      {
+       "t": 3.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 148.21
+      },
+      {
+       "t": 4.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 193.95
+      },
+      {
+       "t": 5.0,
+       "requests": 33,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 33
+       },
+       "avg_ms": 219.58
+      },
+      {
+       "t": 6.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 164.53
+      },
+      {
+       "t": 7.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 191.57
+      },
+      {
+       "t": 8.0,
+       "requests": 44,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 44
+       },
+       "avg_ms": 180.88
+      },
+      {
+       "t": 9.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 377.99
+      }
+     ],
+     "events": [],
+     "variant": "lfu",
+     "routing": "nearest",
+     "cache_policy": "lfu",
+     "repetition": 2
+    },
+    "events": []
+   },
+   {
+    "id": 49,
+    "experiment_id": "eb3e3e993fbe",
+    "variant": "ttl",
+    "repetition": 2,
+    "routing_strategy": "nearest",
+    "cache_policy": "ttl",
+    "started_at": 1792513225.0987875,
+    "finished_at": 1792513235.6634202,
+    "summary": {
+     "total_requests": 400,
+     "successful": 400,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 9.351,
+     "throughput_rps": 42.78,
+     "latency": {
+      "samples": 400,
+      "avg_ms": 181.65,
+      "p50_ms": 96.13,
+      "p95_ms": 457.58,
+      "p99_ms": 540.28,
+      "min_ms": 20.82,
+      "max_ms": 575.82
+     },
+     "resolve": {
+      "samples": 400,
+      "avg_ms": 0.46,
+      "p50_ms": 0.36,
+      "p95_ms": 0.79,
+      "p99_ms": 2.97,
+      "min_ms": 0.22,
+      "max_ms": 5.46
+     },
+     "cache": {
+      "hits": 121,
+      "misses": 244,
+      "coalesced": 35,
+      "bypass": 0,
+      "eligible_lookups": 400,
+      "hit_ratio": 0.3025
+     },
+     "origin": {
+      "fetches": 244,
+      "bytes": 120466438,
+      "baseline_fetches": 400,
+      "reduction": 0.39,
+      "observed_at_origin": 244
+     },
+     "bytes_served": 263029439,
+     "per_edge": {
+      "india-edge": {
+       "requests": 400,
+       "failed": 0,
+       "share": 1.0,
+       "avg_ms": 181.65,
+       "p95_ms": 457.58,
+       "hits": 121,
+       "hit_ratio": 0.3025
+      }
+     },
+     "errors": {},
+     "evictions": 241,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 39,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 39
+       },
+       "avg_ms": 175.06
+      },
+      {
+       "t": 1.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 167.66
+      },
+      {
+       "t": 2.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 176.46
+      },
+      {
+       "t": 3.0,
+       "requests": 53,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 53
+       },
+       "avg_ms": 147.78
+      },
+      {
+       "t": 4.0,
+       "requests": 40,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 40
+       },
+       "avg_ms": 195.95
+      },
+      {
+       "t": 5.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 37
+       },
+       "avg_ms": 215.93
+      },
+      {
+       "t": 6.0,
+       "requests": 46,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 46
+       },
+       "avg_ms": 168.38
+      },
+      {
+       "t": 7.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 42
+       },
+       "avg_ms": 203.41
+      },
+      {
+       "t": 8.0,
+       "requests": 43,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 43
+       },
+       "avg_ms": 172.7
+      },
+      {
+       "t": 9.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 377.83
+      }
+     ],
+     "events": [],
+     "variant": "ttl",
+     "routing": "nearest",
+     "cache_policy": "ttl",
+     "repetition": 2
+    },
+    "events": []
+   }
+  ],
+  "progress": null
+ },
+ {
+  "id": "b7cefca3cc0d",
+  "name": "C. India edge failure (nearest)",
+  "type": "failure",
+  "config": {
+   "name": "C. India edge failure (nearest)",
+   "type": "failure",
+   "workload": {
+    "total_requests": 600,
+    "concurrency": 8,
+    "rate_rps": 60.0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "per_request",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "nearest",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 4194304,
+   "cache_ttl_seconds": 30.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 1,
+   "failure": {
+    "edge_id": "india-edge",
+    "at_s": 3.0,
+    "restore_at_s": 7.0
+   },
+   "degradation": null
+  },
+  "status": "completed",
+  "created_at": 1792513236.7495744,
+  "started_at": 1792513236.7502384,
+  "finished_at": 1792513249.1570005,
+  "error": null,
+  "summary": {
+   "type": "failure",
+   "variants": [
+    {
+     "label": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "runs": 1,
+     "metrics": {
+      "avg_ms": 144.6,
+      "p50_ms": 82.31,
+      "p95_ms": 386.35,
+      "p99_ms": 493.5,
+      "throughput_rps": 52.99,
+      "hit_ratio": 0.598,
+      "origin_fetches": 223,
+      "origin_bytes": 76909181,
+      "origin_reduction": 0.6233,
+      "failure_rate": 0.0133,
+      "evictions": 205,
+      "total_requests": 600,
+      "failed": 8
+     },
+     "edge_share": {
+      "india-edge": 0.49,
+      "singapore-edge": 0.51
+     },
+     "failure": {
+      "edge_id": "india-edge",
+      "injected": true,
+      "detection_ms": 2.1,
+      "detection_reason": "passive: 3 consecutive client transport failures",
+      "failed_requests": 8,
+      "failed_on_failed_edge": 8,
+      "last_failure_ms": 5.2,
+      "first_success_elsewhere_ms": 79.5,
+      "requests_during_failure": 249,
+      "recovery_ms": 882.1
+     }
+    }
+   ],
+   "repetitions": 1
+  },
+  "runs": [
+   {
+    "id": 50,
+    "experiment_id": "b7cefca3cc0d",
+    "variant": "nearest / lru",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513236.7663434,
+    "finished_at": 1792513249.1485748,
+    "summary": {
+     "total_requests": 600,
+     "successful": 592,
+     "failed": 8,
+     "failure_rate": 0.013333333333333334,
+     "duration_s": 11.171,
+     "throughput_rps": 52.99,
+     "latency": {
+      "samples": 592,
+      "avg_ms": 144.6,
+      "p50_ms": 82.31,
+      "p95_ms": 386.35,
+      "p99_ms": 493.5,
+      "min_ms": 21.0,
+      "max_ms": 545.9
+     },
+     "resolve": {
+      "samples": 600,
+      "avg_ms": 0.45,
+      "p50_ms": 0.37,
+      "p95_ms": 0.87,
+      "p99_ms": 2.44,
+      "min_ms": 0.19,
+      "max_ms": 3.19
+     },
+     "cache": {
+      "hits": 354,
+      "misses": 223,
+      "coalesced": 15,
+      "bypass": 0,
+      "eligible_lookups": 592,
+      "hit_ratio": 0.598
+     },
+     "origin": {
+      "fetches": 223,
+      "bytes": 76909181,
+      "baseline_fetches": 592,
+      "reduction": 0.6233,
+      "observed_at_origin": 225
+     },
+     "bytes_served": 379102724,
+     "per_edge": {
+      "india-edge": {
+       "requests": 294,
+       "failed": 8,
+       "share": 0.49,
+       "avg_ms": 160.82,
+       "p95_ms": 433.18,
+       "hits": 186,
+       "hit_ratio": 0.6503496503496503
+      },
+      "singapore-edge": {
+       "requests": 306,
+       "failed": 0,
+       "share": 0.51,
+       "avg_ms": 129.44,
+       "p95_ms": 306.21,
+       "hits": 168,
+       "hit_ratio": 0.5490196078431373
+      }
+     },
+     "errors": {
+      "reset": 8
+     },
+     "evictions": 205,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 36,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 36
+       },
+       "avg_ms": 169.56
+      },
+      {
+       "t": 1.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 155.22
+      },
+      {
+       "t": 2.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 54
+       },
+       "avg_ms": 163.05
+      },
+      {
+       "t": 3.0,
+       "requests": 69,
+       "errors": 8,
+       "per_edge": {
+        "india-edge": 8,
+        "singapore-edge": 61
+       },
+       "avg_ms": 114.8
+      },
+      {
+       "t": 4.0,
+       "requests": 55,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 55
+       },
+       "avg_ms": 145.91
+      },
+      {
+       "t": 5.0,
+       "requests": 66,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 66
+       },
+       "avg_ms": 118.53
+      },
+      {
+       "t": 6.0,
+       "requests": 59,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 59
+       },
+       "avg_ms": 132.62
+      },
+      {
+       "t": 7.0,
+       "requests": 63,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 62,
+        "india-edge": 1
+       },
+       "avg_ms": 129.42
+      },
+      {
+       "t": 8.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 3,
+        "india-edge": 51
+       },
+       "avg_ms": 148.35
+      },
+      {
+       "t": 9.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 168.4
+      },
+      {
+       "t": 10.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 45
+       },
+       "avg_ms": 158.68
+      },
+      {
+       "t": 11.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 397.28
+      }
+     ],
+     "events": [
+      {
+       "t": 3.001,
+       "at": 1792513239.7672317,
+       "kind": "edge_failed",
+       "edge_id": "india-edge"
+      },
+      {
+       "t": 7.002,
+       "at": 1792513243.7683868,
+       "kind": "edge_restored",
+       "edge_id": "india-edge"
+      }
+     ],
+     "failure": {
+      "edge_id": "india-edge",
+      "injected": true,
+      "detection_ms": 2.1,
+      "detection_reason": "passive: 3 consecutive client transport failures",
+      "failed_requests": 8,
+      "failed_on_failed_edge": 8,
+      "last_failure_ms": 5.2,
+      "first_success_elsewhere_ms": 79.5,
+      "requests_during_failure": 249,
+      "recovery_ms": 882.1
+     },
+     "variant": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": [
+     {
+      "t": 3.001,
+      "at": 1792513239.7672317,
+      "kind": "edge_failed",
+      "edge_id": "india-edge"
+     },
+     {
+      "t": 7.002,
+      "at": 1792513243.7683868,
+      "kind": "edge_restored",
+      "edge_id": "india-edge"
+     }
+    ]
+   }
+  ],
+  "progress": null
+ },
+ {
+  "id": "51f8feca2910",
+  "name": "C2. India edge failure (DNS-style TTL)",
+  "type": "failure",
+  "config": {
+   "name": "C2. India edge failure (DNS-style TTL)",
+   "type": "failure",
+   "workload": {
+    "total_requests": 600,
+    "concurrency": 8,
+    "rate_rps": 60.0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "dns",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "nearest",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 4194304,
+   "cache_ttl_seconds": 30.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 1,
+   "failure": {
+    "edge_id": "india-edge",
+    "at_s": 3.0,
+    "restore_at_s": 7.0
+   },
+   "degradation": null
+  },
+  "status": "completed",
+  "created_at": 1792513250.8492157,
+  "started_at": 1792513250.8502054,
+  "finished_at": 1792513262.8110447,
+  "error": null,
+  "summary": {
+   "type": "failure",
+   "variants": [
+    {
+     "label": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "runs": 1,
+     "metrics": {
+      "avg_ms": 136.03,
+      "p50_ms": 82.59,
+      "p95_ms": 387.51,
+      "p99_ms": 529.92,
+      "throughput_rps": 55.14,
+      "hit_ratio": 0.5905,
+      "origin_fetches": 231,
+      "origin_bytes": 81068025,
+      "origin_reduction": 0.6091,
+      "failure_rate": 0.015,
+      "evictions": 211,
+      "total_requests": 600,
+      "failed": 9
+     },
+     "edge_share": {
+      "india-edge": 0.2683,
+      "singapore-edge": 0.7317
+     },
+     "failure": {
+      "edge_id": "india-edge",
+      "injected": true,
+      "detection_ms": 5.3,
+      "detection_reason": "passive: 3 consecutive client transport failures",
+      "failed_requests": 9,
+      "failed_on_failed_edge": 9,
+      "last_failure_ms": 2043.3,
+      "first_success_elsewhere_ms": 84.1,
+      "requests_during_failure": 250,
+      "recovery_ms": 1166.3
+     }
+    }
+   ],
+   "repetitions": 1
+  },
+  "runs": [
+   {
+    "id": 51,
+    "experiment_id": "51f8feca2910",
+    "variant": "nearest / lru",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792513250.873194,
+    "finished_at": 1792513262.8043375,
+    "summary": {
+     "total_requests": 600,
+     "successful": 591,
+     "failed": 9,
+     "failure_rate": 0.015,
+     "duration_s": 10.719,
+     "throughput_rps": 55.14,
+     "latency": {
+      "samples": 591,
+      "avg_ms": 136.03,
+      "p50_ms": 82.59,
+      "p95_ms": 387.51,
+      "p99_ms": 529.92,
+      "min_ms": 20.26,
+      "max_ms": 769.96
+     },
+     "resolve": {
+      "samples": 8,
+      "avg_ms": 1.77,
+      "p50_ms": 1.82,
+      "p95_ms": null,
+      "p99_ms": null,
+      "min_ms": 0.36,
+      "max_ms": 3.36
+     },
+     "cache": {
+      "hits": 349,
+      "misses": 231,
+      "coalesced": 11,
+      "bypass": 0,
+      "eligible_lookups": 591,
+      "hit_ratio": 0.5905
+     },
+     "origin": {
+      "fetches": 231,
+      "bytes": 81068025,
+      "baseline_fetches": 591,
+      "reduction": 0.6091,
+      "observed_at_origin": 232
+     },
+     "bytes_served": 378681876,
+     "per_edge": {
+      "india-edge": {
+       "requests": 161,
+       "failed": 9,
+       "share": 0.2683333333333333,
+       "avg_ms": 170.85,
+       "p95_ms": 485.61,
+       "hits": 93,
+       "hit_ratio": 0.6118421052631579
+      },
+      "singapore-edge": {
+       "requests": 439,
+       "failed": 0,
+       "share": 0.7316666666666667,
+       "avg_ms": 123.97,
+       "p95_ms": 285.51,
+       "hits": 256,
+       "hit_ratio": 0.5831435079726651
+      }
+     },
+     "errors": {
+      "reset": 8,
+      "connect": 1
+     },
+     "evictions": 211,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 30,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 30
+       },
+       "avg_ms": 176.37
+      },
+      {
+       "t": 1.0,
+       "requests": 52,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 52
+       },
+       "avg_ms": 164.57
+      },
+      {
+       "t": 2.0,
+       "requests": 47,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 47
+       },
+       "avg_ms": 183.61
+      },
+      {
+       "t": 3.0,
+       "requests": 66,
+       "errors": 8,
+       "per_edge": {
+        "india-edge": 8,
+        "singapore-edge": 58
+       },
+       "avg_ms": 110.48
+      },
+      {
+       "t": 4.0,
+       "requests": 56,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 56
+       },
+       "avg_ms": 120.8
+      },
+      {
+       "t": 5.0,
+       "requests": 64,
+       "errors": 1,
+       "per_edge": {
+        "singapore-edge": 63,
+        "india-edge": 1
+       },
+       "avg_ms": 125.37
+      },
+      {
+       "t": 6.0,
+       "requests": 64,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 64
+       },
+       "avg_ms": 122.82
+      },
+      {
+       "t": 7.0,
+       "requests": 61,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 61
+       },
+       "avg_ms": 122.21
+      },
+      {
+       "t": 8.0,
+       "requests": 63,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 63
+       },
+       "avg_ms": 136.32
+      },
+      {
+       "t": 9.0,
+       "requests": 63,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 63
+       },
+       "avg_ms": 125.46
+      },
+      {
+       "t": 10.0,
+       "requests": 34,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 11,
+        "india-edge": 23
+       },
+       "avg_ms": 148.13
+      }
+     ],
+     "events": [
+      {
+       "t": 3.002,
+       "at": 1792513253.8752575,
+       "kind": "edge_failed",
+       "edge_id": "india-edge"
+      },
+      {
+       "t": 7.001,
+       "at": 1792513257.874219,
+       "kind": "edge_restored",
+       "edge_id": "india-edge"
+      }
+     ],
+     "failure": {
+      "edge_id": "india-edge",
+      "injected": true,
+      "detection_ms": 5.3,
+      "detection_reason": "passive: 3 consecutive client transport failures",
+      "failed_requests": 9,
+      "failed_on_failed_edge": 9,
+      "last_failure_ms": 2043.3,
+      "first_success_elsewhere_ms": 84.1,
+      "requests_during_failure": 250,
+      "recovery_ms": 1166.3
+     },
+     "variant": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": [
+     {
+      "t": 3.002,
+      "at": 1792513253.8752575,
+      "kind": "edge_failed",
+      "edge_id": "india-edge"
+     },
+     {
+      "t": 7.001,
+      "at": 1792513257.874219,
+      "kind": "edge_restored",
+      "edge_id": "india-edge"
+     }
+    ]
+   }
+  ],
+  "progress": null
+ },
+ {
+  "id": "09b3e4875dae",
+  "name": "D. India link degradation (lowest latency)",
+  "type": "degradation",
+  "config": {
+   "name": "D. India link degradation (lowest latency)",
+   "type": "degradation",
+   "workload": {
+    "total_requests": 600,
+    "concurrency": 8,
+    "rate_rps": 60.0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "per_request",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "lowest_latency",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 4194304,
+   "cache_ttl_seconds": 30.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 1,
+   "failure": null,
+   "degradation": {
+    "edge_id": "india-edge",
+    "at_s": 3.0,
+    "profile": {
+     "base_latency_ms": 180.0,
+     "jitter_ms": null,
+     "bandwidth_mbps": null,
+     "packet_loss": 0.02,
+     "concurrency_limit": null
+    }
+   }
+  },
+  "status": "completed",
+  "created_at": 1792514863.6741028,
+  "started_at": 1792514863.6750565,
+  "finished_at": 1792514879.2676358,
+  "error": null,
+  "summary": {
+   "type": "degradation",
+   "variants": [
+    {
+     "label": "lowest_latency / lru",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "runs": 1,
+     "metrics": {
+      "avg_ms": 187.02,
+      "p50_ms": 81.58,
+      "p95_ms": 419.6,
+      "p99_ms": 583.11,
+      "throughput_rps": 42.01,
+      "hit_ratio": 0.5983,
+      "origin_fetches": 230,
+      "origin_bytes": 80415211,
+      "origin_reduction": 0.6167,
+      "failure_rate": 0.0,
+      "evictions": 206,
+      "total_requests": 600,
+      "failed": 0
+     },
+     "edge_share": {
+      "india-edge": 0.2667,
+      "singapore-edge": 0.7333
+     }
+    }
+   ],
+   "repetitions": 1
+  },
+  "runs": [
+   {
+    "id": 56,
+    "experiment_id": "09b3e4875dae",
+    "variant": "lowest_latency / lru",
+    "repetition": 0,
+    "routing_strategy": "lowest_latency",
+    "cache_policy": "lru",
+    "started_at": 1792514863.7583709,
+    "finished_at": 1792514879.257758,
+    "summary": {
+     "total_requests": 600,
+     "successful": 600,
+     "failed": 0,
+     "failure_rate": 0.0,
+     "duration_s": 14.283,
+     "throughput_rps": 42.01,
+     "latency": {
+      "samples": 600,
+      "avg_ms": 187.02,
+      "p50_ms": 81.58,
+      "p95_ms": 419.6,
+      "p99_ms": 583.11,
+      "min_ms": 22.56,
+      "max_ms": 9798.52
+     },
+     "resolve": {
+      "samples": 600,
+      "avg_ms": 0.37,
+      "p50_ms": 0.33,
+      "p95_ms": 0.63,
+      "p99_ms": 0.82,
+      "min_ms": 0.23,
+      "max_ms": 1.37
+     },
+     "cache": {
+      "hits": 359,
+      "misses": 230,
+      "coalesced": 11,
+      "bypass": 0,
+      "eligible_lookups": 600,
+      "hit_ratio": 0.5983
+     },
+     "origin": {
+      "fetches": 230,
+      "bytes": 80415211,
+      "baseline_fetches": 600,
+      "reduction": 0.6167,
+      "observed_at_origin": 230
+     },
+     "bytes_served": 387368671,
+     "per_edge": {
+      "india-edge": {
+       "requests": 160,
+       "failed": 0,
+       "share": 0.26666666666666666,
+       "avg_ms": 368.26,
+       "p95_ms": 554.73,
+       "hits": 97,
+       "hit_ratio": 0.60625
+      },
+      "singapore-edge": {
+       "requests": 440,
+       "failed": 0,
+       "share": 0.7333333333333333,
+       "avg_ms": 121.11,
+       "p95_ms": 315.7,
+       "hits": 262,
+       "hit_ratio": 0.5954545454545455
+      }
+     },
+     "errors": {},
+     "evictions": 206,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 37
+       },
+       "avg_ms": 157.18
+      },
+      {
+       "t": 1.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 49
+       },
+       "avg_ms": 170.93
+      },
+      {
+       "t": 2.0,
+       "requests": 54,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 54
+       },
+       "avg_ms": 141.7
+      },
+      {
+       "t": 3.0,
+       "requests": 18,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 14,
+        "singapore-edge": 4
+       },
+       "avg_ms": 334.85
+      },
+      {
+       "t": 4.0,
+       "requests": 33,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 31,
+        "india-edge": 2
+       },
+       "avg_ms": 152.38
+      },
+      {
+       "t": 5.0,
+       "requests": 37,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 36,
+        "india-edge": 1
+       },
+       "avg_ms": 164.59
+      },
+      {
+       "t": 6.0,
+       "requests": 34,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 34
+       },
+       "avg_ms": 154.77
+      },
+      {
+       "t": 7.0,
+       "requests": 45,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 45
+       },
+       "avg_ms": 94.48
+      },
+      {
+       "t": 8.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 41
+       },
+       "avg_ms": 139.66
+      },
+      {
+       "t": 9.0,
+       "requests": 41,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 41
+       },
+       "avg_ms": 115.9
+      },
+      {
+       "t": 10.0,
+       "requests": 38,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 38
+       },
+       "avg_ms": 135.63
+      },
+      {
+       "t": 11.0,
+       "requests": 42,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 42
+       },
+       "avg_ms": 118.19
+      },
+      {
+       "t": 12.0,
+       "requests": 49,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 47,
+        "india-edge": 2
+       },
+       "avg_ms": 488.1
+      },
+      {
+       "t": 13.0,
+       "requests": 70,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 69,
+        "india-edge": 1
+       },
+       "avg_ms": 245.92
+      },
+      {
+       "t": 14.0,
+       "requests": 12,
+       "errors": 0,
+       "per_edge": {
+        "singapore-edge": 12
+       },
+       "avg_ms": 164.95
+      }
+     ],
+     "events": [
+      {
+       "t": 3.0,
+       "at": 1792514866.7588236,
+       "kind": "link_degraded",
+       "edge_id": "india-edge",
+       "profile": {
+        "base_latency_ms": 180.0,
+        "packet_loss": 0.02
+       }
+      }
+     ],
+     "variant": "lowest_latency / lru",
+     "routing": "lowest_latency",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": [
+     {
+      "t": 3.0,
+      "at": 1792514866.7588236,
+      "kind": "link_degraded",
+      "edge_id": "india-edge",
+      "profile": {
+       "base_latency_ms": 180.0,
+       "packet_loss": 0.02
+      }
+     }
+    ]
+   }
+  ],
+  "progress": null
+ },
+ {
+  "id": "42e41073b81c",
+  "name": "D2. India link degradation (nearest)",
+  "type": "degradation",
+  "config": {
+   "name": "D2. India link degradation (nearest)",
+   "type": "degradation",
+   "workload": {
+    "total_requests": 600,
+    "concurrency": 8,
+    "rate_rps": 60.0,
+    "distribution": "zipf",
+    "zipf_s": 1.1,
+    "seed": 7,
+    "objects": [],
+    "resolution": "per_request",
+    "hostname": "cdn.sim.local",
+    "timeout_s": 10
+   },
+   "routing_strategy": "nearest",
+   "weights": null,
+   "cache_policy": "lru",
+   "cache_capacity_bytes": 4194304,
+   "cache_ttl_seconds": 30.0,
+   "strategies": [
+    "random",
+    "nearest",
+    "lowest_latency",
+    "least_loaded",
+    "hybrid"
+   ],
+   "policies": [
+    "none",
+    "lru",
+    "lfu",
+    "ttl"
+   ],
+   "repetitions": 1,
+   "failure": null,
+   "degradation": {
+    "edge_id": "india-edge",
+    "at_s": 3.0,
+    "profile": {
+     "base_latency_ms": 180.0,
+     "jitter_ms": null,
+     "bandwidth_mbps": null,
+     "packet_loss": 0.02,
+     "concurrency_limit": null
+    }
+   }
+  },
+  "status": "completed",
+  "created_at": 1792514879.7538705,
+  "started_at": 1792514879.7547705,
+  "finished_at": 1792515087.0397587,
+  "error": null,
+  "summary": {
+   "type": "degradation",
+   "variants": [
+    {
+     "label": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "runs": 1,
+     "metrics": {
+      "avg_ms": 2198.95,
+      "p50_ms": 572.52,
+      "p95_ms": 9077.89,
+      "p99_ms": 9796.84,
+      "throughput_rps": 2.73,
+      "hit_ratio": 0.5986,
+      "origin_fetches": 222,
+      "origin_bytes": 67761841,
+      "origin_reduction": 0.6057,
+      "failure_rate": 0.0617,
+      "evictions": 217,
+      "total_requests": 600,
+      "failed": 37
+     },
+     "edge_share": {
+      "india-edge": 1.0
+     }
+    }
+   ],
+   "repetitions": 1
+  },
+  "runs": [
+   {
+    "id": 57,
+    "experiment_id": "42e41073b81c",
+    "variant": "nearest / lru",
+    "repetition": 0,
+    "routing_strategy": "nearest",
+    "cache_policy": "lru",
+    "started_at": 1792514879.7734466,
+    "finished_at": 1792515087.0313203,
+    "summary": {
+     "total_requests": 600,
+     "successful": 563,
+     "failed": 37,
+     "failure_rate": 0.06166666666666667,
+     "duration_s": 206.046,
+     "throughput_rps": 2.73,
+     "latency": {
+      "samples": 563,
+      "avg_ms": 2198.95,
+      "p50_ms": 572.52,
+      "p95_ms": 9077.89,
+      "p99_ms": 9796.84,
+      "min_ms": 20.09,
+      "max_ms": 9914.83
+     },
+     "resolve": {
+      "samples": 600,
+      "avg_ms": 0.37,
+      "p50_ms": 0.34,
+      "p95_ms": 0.52,
+      "p99_ms": 0.83,
+      "min_ms": 0.23,
+      "max_ms": 1.3
+     },
+     "cache": {
+      "hits": 337,
+      "misses": 222,
+      "coalesced": 4,
+      "bypass": 0,
+      "eligible_lookups": 563,
+      "hit_ratio": 0.5986
+     },
+     "origin": {
+      "fetches": 222,
+      "bytes": 67761841,
+      "baseline_fetches": 563,
+      "reduction": 0.6057,
+      "observed_at_origin": 228
+     },
+     "bytes_served": 324454111,
+     "per_edge": {
+      "india-edge": {
+       "requests": 600,
+       "failed": 37,
+       "share": 1.0,
+       "avg_ms": 2198.95,
+       "p95_ms": 9077.89,
+       "hits": 337,
+       "hit_ratio": 0.5985790408525755
+      }
+     },
+     "errors": {
+      "timeout": 37
+     },
+     "evictions": 217,
+     "timeline": [
+      {
+       "t": 0.0,
+       "requests": 85,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 85
+       },
+       "avg_ms": 163.05
+      },
+      {
+       "t": 2.0,
+       "requests": 70,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 70
+       },
+       "avg_ms": 205.84
+      },
+      {
+       "t": 4.0,
+       "requests": 9,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 9
+       },
+       "avg_ms": 730.21
+      },
+      {
+       "t": 6.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 817.73
+      },
+      {
+       "t": 8.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 2572.45
+      },
+      {
+       "t": 10.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 6738.83
+      },
+      {
+       "t": 12.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 4038.25
+      },
+      {
+       "t": 14.0,
+       "requests": 9,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 9
+       },
+       "avg_ms": 2471.92
+      },
+      {
+       "t": 16.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 2513.3
+      },
+      {
+       "t": 18.0,
+       "requests": 2,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 2387.36
+      },
+      {
+       "t": 20.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 2585.43
+      },
+      {
+       "t": 22.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 948.24
+      },
+      {
+       "t": 24.0,
+       "requests": 5,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 4302.55
+      },
+      {
+       "t": 26.0,
+       "requests": 5,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 4136.26
+      },
+      {
+       "t": 30.0,
+       "requests": 6,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1352.33
+      },
+      {
+       "t": 32.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 4461.84
+      },
+      {
+       "t": 34.0,
+       "requests": 9,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 9
+       },
+       "avg_ms": 3186.16
+      },
+      {
+       "t": 36.0,
+       "requests": 1,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 1
+       },
+       "avg_ms": 1272.77
+      },
+      {
+       "t": 38.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 4417.3
+      },
+      {
+       "t": 40.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3547.05
+      },
+      {
+       "t": 42.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 2945.31
+      },
+      {
+       "t": 44.0,
+       "requests": 3,
+       "errors": 2,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 9438.14
+      },
+      {
+       "t": 46.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 3197.16
+      },
+      {
+       "t": 48.0,
+       "requests": 5,
+       "errors": 2,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 230.04
+      },
+      {
+       "t": 52.0,
+       "requests": 6,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 3444.35
+      },
+      {
+       "t": 54.0,
+       "requests": 6,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 2065.29
+      },
+      {
+       "t": 56.0,
+       "requests": 3,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 957.8
+      },
+      {
+       "t": 58.0,
+       "requests": 10,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 10
+       },
+       "avg_ms": 2026.34
+      },
+      {
+       "t": 60.0,
+       "requests": 7,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 7
+       },
+       "avg_ms": 4006.02
+      },
+      {
+       "t": 62.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 367.53
+      },
+      {
+       "t": 64.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 1857.87
+      },
+      {
+       "t": 66.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 926.29
+      },
+      {
+       "t": 68.0,
+       "requests": 8,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 3003.69
+      },
+      {
+       "t": 70.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 5897.0
+      },
+      {
+       "t": 74.0,
+       "requests": 4,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3197.68
+      },
+      {
+       "t": 76.0,
+       "requests": 9,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 9
+       },
+       "avg_ms": 1566.63
+      },
+      {
+       "t": 78.0,
+       "requests": 6,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 3990.97
+      },
+      {
+       "t": 80.0,
+       "requests": 1,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 1
+       },
+       "avg_ms": null
+      },
+      {
+       "t": 84.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 7459.49
+      },
+      {
+       "t": 86.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 8177.34
+      },
+      {
+       "t": 88.0,
+       "requests": 7,
+       "errors": 2,
+       "per_edge": {
+        "india-edge": 7
+       },
+       "avg_ms": 4287.42
+      },
+      {
+       "t": 90.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 1560.48
+      },
+      {
+       "t": 92.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1377.15
+      },
+      {
+       "t": 94.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 6729.57
+      },
+      {
+       "t": 96.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 685.89
+      },
+      {
+       "t": 98.0,
+       "requests": 7,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 7
+       },
+       "avg_ms": 4434.0
+      },
+      {
+       "t": 100.0,
+       "requests": 8,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 1989.6
+      },
+      {
+       "t": 102.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 592.84
+      },
+      {
+       "t": 104.0,
+       "requests": 4,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3750.35
+      },
+      {
+       "t": 106.0,
+       "requests": 6,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1904.93
+      },
+      {
+       "t": 108.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3921.48
+      },
+      {
+       "t": 110.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 4995.14
+      },
+      {
+       "t": 112.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 3822.6
+      },
+      {
+       "t": 116.0,
+       "requests": 5,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 5051.5
+      },
+      {
+       "t": 118.0,
+       "requests": 4,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3529.83
+      },
+      {
+       "t": 122.0,
+       "requests": 3,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 6309.34
+      },
+      {
+       "t": 124.0,
+       "requests": 7,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 7
+       },
+       "avg_ms": 3696.98
+      },
+      {
+       "t": 126.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 2695.06
+      },
+      {
+       "t": 128.0,
+       "requests": 9,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 9
+       },
+       "avg_ms": 1893.0
+      },
+      {
+       "t": 130.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 998.58
+      },
+      {
+       "t": 132.0,
+       "requests": 8,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 3544.71
+      },
+      {
+       "t": 134.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1826.82
+      },
+      {
+       "t": 136.0,
+       "requests": 3,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 778.56
+      },
+      {
+       "t": 138.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 7088.78
+      },
+      {
+       "t": 140.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 2321.22
+      },
+      {
+       "t": 142.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1937.43
+      },
+      {
+       "t": 144.0,
+       "requests": 4,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3164.13
+      },
+      {
+       "t": 146.0,
+       "requests": 5,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 2430.04
+      },
+      {
+       "t": 148.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3448.76
+      },
+      {
+       "t": 150.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 3061.54
+      },
+      {
+       "t": 152.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 5192.22
+      },
+      {
+       "t": 154.0,
+       "requests": 5,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 5
+       },
+       "avg_ms": 2059.54
+      },
+      {
+       "t": 156.0,
+       "requests": 8,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 3219.04
+      },
+      {
+       "t": 158.0,
+       "requests": 8,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 2329.58
+      },
+      {
+       "t": 160.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3071.8
+      },
+      {
+       "t": 164.0,
+       "requests": 3,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 5631.13
+      },
+      {
+       "t": 166.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 4470.42
+      },
+      {
+       "t": 168.0,
+       "requests": 8,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 2608.48
+      },
+      {
+       "t": 170.0,
+       "requests": 8,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 2456.88
+      },
+      {
+       "t": 172.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 4024.18
+      },
+      {
+       "t": 174.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 1341.06
+      },
+      {
+       "t": 176.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 5543.19
+      },
+      {
+       "t": 178.0,
+       "requests": 12,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 12
+       },
+       "avg_ms": 2383.59
+      },
+      {
+       "t": 180.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 3500.52
+      },
+      {
+       "t": 184.0,
+       "requests": 7,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 7
+       },
+       "avg_ms": 3136.26
+      },
+      {
+       "t": 186.0,
+       "requests": 4,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 4
+       },
+       "avg_ms": 3248.78
+      },
+      {
+       "t": 188.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 7410.31
+      },
+      {
+       "t": 190.0,
+       "requests": 8,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 1862.42
+      },
+      {
+       "t": 192.0,
+       "requests": 8,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 8
+       },
+       "avg_ms": 2245.06
+      },
+      {
+       "t": 194.0,
+       "requests": 6,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 6
+       },
+       "avg_ms": 1921.91
+      },
+      {
+       "t": 196.0,
+       "requests": 3,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 3910.76
+      },
+      {
+       "t": 198.0,
+       "requests": 2,
+       "errors": 0,
+       "per_edge": {
+        "india-edge": 2
+       },
+       "avg_ms": 6742.7
+      },
+      {
+       "t": 200.0,
+       "requests": 3,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 3
+       },
+       "avg_ms": 4373.34
+      },
+      {
+       "t": 204.0,
+       "requests": 1,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 1
+       },
+       "avg_ms": null
+      },
+      {
+       "t": 206.0,
+       "requests": 1,
+       "errors": 1,
+       "per_edge": {
+        "india-edge": 1
+       },
+       "avg_ms": null
+      }
+     ],
+     "events": [
+      {
+       "t": 3.001,
+       "at": 1792514882.7743807,
+       "kind": "link_degraded",
+       "edge_id": "india-edge",
+       "profile": {
+        "base_latency_ms": 180.0,
+        "packet_loss": 0.02
+       }
+      }
+     ],
+     "variant": "nearest / lru",
+     "routing": "nearest",
+     "cache_policy": "lru",
+     "repetition": 0
+    },
+    "events": [
+     {
+      "t": 3.001,
+      "at": 1792514882.7743807,
+      "kind": "link_degraded",
+      "edge_id": "india-edge",
+      "profile": {
+       "base_latency_ms": 180.0,
+       "packet_loss": 0.02
+      }
+     }
+    ]
+   }
+  ],
+  "progress": {
+   "experiment_id": "42e41073b81c",
+   "name": "D2. India link degradation (nearest)",
+   "type": "degradation",
+   "status": "completed",
+   "completed": 600,
+   "failed": 37,
+   "total": 600,
+   "run_index": 1,
+   "run_count": 1,
+   "variant": "nearest / lru",
+   "started_at": 1792514879.7547681,
+   "finished_at": 1792515087.0401595,
+   "fraction": 1.0
+  }
+ }
+]

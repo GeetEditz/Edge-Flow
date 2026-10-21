@@ -1,0 +1,17 @@
+PASS page / renders without console errors
+PASS page /servers renders without console errors
+PASS page /routing renders without console errors
+PASS page /cache renders without console errors
+PASS page /traffic renders without console errors
+PASS page /experiments renders without console errors
+PASS page /topology renders without console errors
+PASS page /nope renders without console errors
+PASS routing strategy control changes backend
+PASS test request shows HTTP 200 and explanation
+PASS simulate failure via confirm dialog marks edge unhealthy
+PASS restore control brings edge back to healthy
+PASS cache warm and clear controls act on the edge cache
+PASS traffic generator starts a real 150-request run and renders results
+PASS experiment form saves and CSV export downloads
+PASS delete with confirmation removes the experiment
+console errors: []

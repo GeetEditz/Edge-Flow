@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# Node
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+# Runtime data
+data/
+backend/content/
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.venv-docs/
+# Logs / Office lock files
+*.log
+~$*

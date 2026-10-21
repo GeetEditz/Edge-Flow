@@ -1,0 +1,9 @@
+Demo rehearsal 2026-10-20 22:25:24
+1. health: ok healthy edges: 3 origin: healthy
+2. routing strategy set to failover
+   request 1: HTTP 200 edge=india-edge X-Cache=MISS latency=50.503 ms reason=[failover] highest-priority healthy edge (priority 1)
+   request 2: HTTP 200 edge=india-edge X-Cache=HIT latency=21.822 ms reason=[failover] highest-priority healthy edge (priority 1)
+3. India edge failure simulated
+   India marked unhealthy after 2.35 s (active probes)
+   request 3: HTTP 200 edge=singapore-edge X-Cache=MISS reason=[failover] highest-priority healthy edge (priority 2); excluded unhealthy: india-edge
+   restored India edge and routing strategy hybrid
